@@ -25,7 +25,7 @@
         // Create the log in view controller
 
         logInViewControllerConfigure *login = [[logInViewControllerConfigure alloc] init];
-        login.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton | PFLogInFieldsTwitter | PFLogInFieldsFacebook | PFLogInFieldsDismissButton;
+        login.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton | PFLogInFieldsTwitter | PFLogInFieldsFacebook;
         login.delegate = self;
         [login setFacebookPermissions:[NSArray arrayWithObjects:@"public_profile", nil]];
         // Create the sign up view controller
