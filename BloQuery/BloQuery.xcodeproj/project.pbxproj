@@ -37,6 +37,7 @@
 		BA8AC16B1B7EB481000D6A15 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8AC16A1B7EB481000D6A15 /* ParseFacebookUtilsV4.framework */; };
 		BA8AC1701B7EBDC3000D6A15 /* logInViewControllerConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC16D1B7EBDC3000D6A15 /* logInViewControllerConfigure.m */; };
 		BA8AC1711B7EBDC3000D6A15 /* signUpViewControllerConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC16F1B7EBDC3000D6A15 /* signUpViewControllerConfigure.m */; };
+		BA8AC17E1B7EC566000D6A15 /* QuestionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC17D1B7EC566000D6A15 /* QuestionsTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		BA8AC16D1B7EBDC3000D6A15 /* logInViewControllerConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = logInViewControllerConfigure.m; path = ../../../BlocQuery/BlocQuery/BlocQuery/logInViewControllerConfigure.m; sourceTree = "<group>"; };
 		BA8AC16E1B7EBDC3000D6A15 /* signUpViewControllerConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = signUpViewControllerConfigure.h; path = ../../../BlocQuery/BlocQuery/BlocQuery/signUpViewControllerConfigure.h; sourceTree = "<group>"; };
 		BA8AC16F1B7EBDC3000D6A15 /* signUpViewControllerConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = signUpViewControllerConfigure.m; path = ../../../BlocQuery/BlocQuery/BlocQuery/signUpViewControllerConfigure.m; sourceTree = "<group>"; };
+		BA8AC17C1B7EC566000D6A15 /* QuestionsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsTableViewCell.h; sourceTree = "<group>"; };
+		BA8AC17D1B7EC566000D6A15 /* QuestionsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +196,8 @@
 			children = (
 				BA8AC11D1B7EA3FC000D6A15 /* MasterViewController.h */,
 				BA8AC11E1B7EA3FC000D6A15 /* MasterViewController.m */,
+				BA8AC17C1B7EC566000D6A15 /* QuestionsTableViewCell.h */,
+				BA8AC17D1B7EC566000D6A15 /* QuestionsTableViewCell.m */,
 				BA8AC1201B7EA3FC000D6A15 /* DetailViewController.h */,
 				BA8AC1211B7EA3FC000D6A15 /* DetailViewController.m */,
 				BA8AC15D1B7EA626000D6A15 /* LogInViewController.h */,
@@ -357,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA8AC11C1B7EA3FC000D6A15 /* AppDelegate.m in Sources */,
+				BA8AC17E1B7EC566000D6A15 /* QuestionsTableViewCell.m in Sources */,
 				BA8AC11F1B7EA3FC000D6A15 /* MasterViewController.m in Sources */,
 				BA8AC1711B7EBDC3000D6A15 /* signUpViewControllerConfigure.m in Sources */,
 				BA8AC15F1B7EA626000D6A15 /* LogInViewController.m in Sources */,
@@ -569,6 +575,7 @@
 				BA8AC13B1B7EA3FC000D6A15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA8AC13C1B7EA3FC000D6A15 /* Build configuration list for PBXNativeTarget "BloQueryTests" */ = {
 			isa = XCConfigurationList;
@@ -577,6 +584,7 @@
 				BA8AC13E1B7EA3FC000D6A15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

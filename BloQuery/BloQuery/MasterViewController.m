@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "QuestionsTableViewCell.h"
 
 @interface MasterViewController ()
 
@@ -63,13 +64,24 @@
     return self.objects.count;
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     NSDate *object = self.objects[indexPath.row];
     cell.textLabel.text = [object description];
+    
     return cell;
 }
+
+// Filling cell
+
+
+
+
+
+
+// Editing tableView
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
@@ -83,6 +95,13 @@
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
+}
+
+// Allow for autolayout cell height
+
+- (void)configureTableView:(UITableView *)tableView {
+    tableView.rowHeight = UITableViewAutomaticDimension;
+    tableView.estimatedRowHeight = 100.0;
 }
 
 @end
