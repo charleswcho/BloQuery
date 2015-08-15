@@ -35,6 +35,8 @@
 		BA8AC1671B7EAF65000D6A15 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8AC1661B7EAF65000D6A15 /* FBSDKShareKit.framework */; };
 		BA8AC1691B7EB222000D6A15 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8AC1681B7EB222000D6A15 /* ParseFacebookUtils.framework */; };
 		BA8AC16B1B7EB481000D6A15 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8AC16A1B7EB481000D6A15 /* ParseFacebookUtilsV4.framework */; };
+		BA8AC1701B7EBDC3000D6A15 /* logInViewControllerConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC16D1B7EBDC3000D6A15 /* logInViewControllerConfigure.m */; };
+		BA8AC1711B7EBDC3000D6A15 /* signUpViewControllerConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC16F1B7EBDC3000D6A15 /* signUpViewControllerConfigure.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,10 @@
 		BA8AC1661B7EAF65000D6A15 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../../Downloads/FacebookSDKs-iOS-20150810/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		BA8AC1681B7EB222000D6A15 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "../../../../Downloads/parse-library-1.7.5/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
 		BA8AC16A1B7EB481000D6A15 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../../../Downloads/parse-library-1.7.5/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
+		BA8AC16C1B7EBDC3000D6A15 /* logInViewControllerConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = logInViewControllerConfigure.h; path = ../../../BlocQuery/BlocQuery/BlocQuery/logInViewControllerConfigure.h; sourceTree = "<group>"; };
+		BA8AC16D1B7EBDC3000D6A15 /* logInViewControllerConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = logInViewControllerConfigure.m; path = ../../../BlocQuery/BlocQuery/BlocQuery/logInViewControllerConfigure.m; sourceTree = "<group>"; };
+		BA8AC16E1B7EBDC3000D6A15 /* signUpViewControllerConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = signUpViewControllerConfigure.h; path = ../../../BlocQuery/BlocQuery/BlocQuery/signUpViewControllerConfigure.h; sourceTree = "<group>"; };
+		BA8AC16F1B7EBDC3000D6A15 /* signUpViewControllerConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = signUpViewControllerConfigure.m; path = ../../../BlocQuery/BlocQuery/BlocQuery/signUpViewControllerConfigure.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +197,7 @@
 				BA8AC1211B7EA3FC000D6A15 /* DetailViewController.m */,
 				BA8AC15D1B7EA626000D6A15 /* LogInViewController.h */,
 				BA8AC15E1B7EA626000D6A15 /* LogInViewController.m */,
+				BA8AC1721B7EBEE1000D6A15 /* Login Configure */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -236,6 +243,17 @@
 			);
 			name = Frameworks;
 			path = BloQuery.xcodeproj;
+			sourceTree = "<group>";
+		};
+		BA8AC1721B7EBEE1000D6A15 /* Login Configure */ = {
+			isa = PBXGroup;
+			children = (
+				BA8AC16C1B7EBDC3000D6A15 /* logInViewControllerConfigure.h */,
+				BA8AC16D1B7EBDC3000D6A15 /* logInViewControllerConfigure.m */,
+				BA8AC16E1B7EBDC3000D6A15 /* signUpViewControllerConfigure.h */,
+				BA8AC16F1B7EBDC3000D6A15 /* signUpViewControllerConfigure.m */,
+			);
+			name = "Login Configure";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,7 +358,9 @@
 			files = (
 				BA8AC11C1B7EA3FC000D6A15 /* AppDelegate.m in Sources */,
 				BA8AC11F1B7EA3FC000D6A15 /* MasterViewController.m in Sources */,
+				BA8AC1711B7EBDC3000D6A15 /* signUpViewControllerConfigure.m in Sources */,
 				BA8AC15F1B7EA626000D6A15 /* LogInViewController.m in Sources */,
+				BA8AC1701B7EBDC3000D6A15 /* logInViewControllerConfigure.m in Sources */,
 				BA8AC1191B7EA3FC000D6A15 /* main.m in Sources */,
 				BA8AC1221B7EA3FC000D6A15 /* DetailViewController.m in Sources */,
 			);

@@ -10,6 +10,8 @@
 #import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "logInViewControllerConfigure.h"
+#import "signUpViewControllerConfigure.h"
 
 @interface LogInViewController ()
 
@@ -21,22 +23,20 @@
     [super viewDidLoad];
     if (![PFUser currentUser]) { // No user logged in
         // Create the log in view controller
-        
-        // Customize the Log In View Controller
-        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
-        [logInViewController setDelegate:self];
-        [logInViewController setFacebookPermissions:[NSArray arrayWithObjects:@"public_profile", nil]];
-        [logInViewController setFields: PFLogInFieldsTwitter | PFLogInFieldsFacebook | PFLogInFieldsDismissButton];
-        
+
+        logInViewControllerConfigure *login = [[logInViewControllerConfigure alloc] init];
+        login.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton | PFLogInFieldsTwitter | PFLogInFieldsFacebook | PFLogInFieldsDismissButton;
+        login.delegate = self;
+        [login setFacebookPermissions:[NSArray arrayWithObjects:@"public_profile", nil]];
         // Create the sign up view controller
-        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
-        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
-        
-        // Assign our sign up controller to be displayed from the login controller
-        [logInViewController setSignUpController:signUpViewController];
-        
+
+        signUpViewControllerConfigure *signUp = [[signUpViewControllerConfigure alloc] init];
+        signUp.delegate = self;
+
+        [login setSignUpController:signUp];
+
         // Present the log in view controller
-        [self presentViewController:logInViewController animated:YES completion:NULL];
+        [self presentViewController:login animated:YES completion:NULL];
     }
 
 }
