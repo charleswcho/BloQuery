@@ -1,21 +1,22 @@
 //
-//  MasterViewController.m
+//  PFQTableViewController.m
 //  BloQuery
 //
-//  Created by Charles Wesley Cho on 8/14/15.
+//  Created by Charles Wesley Cho on 8/16/15.
 //  Copyright (c) 2015 Charles Wesley Cho. All rights reserved.
 //
 
-#import "MasterViewController.h"
+#import "QuestionsTableViewController.h"
+#import "QuestionsCell.h"
 #import "DetailViewController.h"
-#import "QuestionsTableViewCell.h"
 
-@interface MasterViewController ()
+@interface QuestionsTableViewController ()
 
 @property NSMutableArray *objects;
+
 @end
 
-@implementation MasterViewController
+@implementation QuestionsTableViewController
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -25,15 +26,41 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
+    
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (id)initWithCoder:(NSCoder *)aCoder
+{
+    self = [super initWithCoder:aCoder];
+    if (self) {
+        // The className to query on
+        self.parseClassName = @"Question";
+        
+        // The key of the PFObject to display in the label of the default cell style
+        self.textKey = @"name";
+        
+        // Whether the built-in pull-to-refresh is enabled
+        self.pullToRefreshEnabled = YES;
+        
+        // Whether the built-in pagination is enabled
+        self.paginationEnabled = NO;
+        
+//        self.objectsPerPage = 5;
+
+    }
+    return self;
 }
+
+- (PFQuery *)queryForTable
+{
+    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    
+    [query orderByDescending:@"createdAt"];
+    return query;
+}
+
 
 - (void)insertNewObject:(id)sender {
     if (!self.objects) {
@@ -44,15 +71,6 @@
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
-#pragma mark - Segues
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
-    }
-}
 
 #pragma mark - Table View
 
@@ -64,22 +82,18 @@
     return self.objects.count;
 }
 
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDate *object = self.objects[indexPath.row];
-    cell.textLabel.text = [object description];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
+{
+    static NSString *simpleTableIdentifier = @"Cell";
+    
+    QuestionsCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil) {
+        cell = [[QuestionsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+//    cell.delegate = self;  -------------------------------Its a cell with a TableView as the delegate. What's the problem????
     
     return cell;
 }
-
-// Filling cell
-
-
-
-
-
 
 // Editing tableView
 
@@ -102,6 +116,22 @@
 - (void)configureTableView:(UITableView *)tableView {
     tableView.rowHeight = UITableViewAutomaticDimension;
     tableView.estimatedRowHeight = 100.0;
+}
+
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSDate *object = self.objects[indexPath.row];
+        [[segue destinationViewController] setDetailItem:object];
+    }
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -44,7 +44,7 @@
         <!--Master-->
         <scene sceneID="VgW-fR-Quf">
             <objects>
-                <tableViewController title="Master" id="pGg-6v-bdr" customClass="MasterViewController" sceneMemberID="viewController">
+                <tableViewController title="Master" id="pGg-6v-bdr" customClass="PFQueryTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mLL-gJ-YKr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,13 +63,6 @@
                                                 <constraint firstAttribute="width" constant="100" id="Fxf-Hb-tTW"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yuu-dH-v3v">
-                                            <rect key="frame" x="104" y="62" width="60" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="C4t-Du-UHV"/>
-                                                <constraint firstAttribute="width" constant="60" id="l8w-mq-zqS"/>
-                                            </constraints>
-                                        </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fI8-qp-3YR">
                                             <rect key="frame" x="8" y="62" width="88" height="30"/>
                                             <state key="normal" title="# of answers">
@@ -82,6 +75,13 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yuu-dH-v3v">
+                                            <rect key="frame" x="104" y="62" width="60" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="C4t-Du-UHV"/>
+                                                <constraint firstAttribute="width" constant="60" id="l8w-mq-zqS"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="oDS-vq-qZe" firstAttribute="leading" secondItem="Sy4-cV-POp" secondAttribute="trailing" constant="8" id="1Aa-u2-Yfp"/>
@@ -121,10 +121,10 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="interestLevel" destination="yuu-dH-v3v" id="L7X-7f-fmk"/>
                                     <outlet property="numberOfAnswersButton" destination="fI8-qp-3YR" id="MuD-ee-3UN"/>
                                     <outlet property="profilePic" destination="rtm-EN-dRA" id="oRa-Ua-Gyv"/>
-                                    <outlet property="questionText" destination="Sy4-cV-POp" id="XmI-bd-ieL"/>
+                                    <outlet property="profilePicView" destination="oDS-vq-qZe" id="iAR-6q-30z"/>
+                                    <outlet property="questionTextLabel" destination="Sy4-cV-POp" id="4RM-W7-9oB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

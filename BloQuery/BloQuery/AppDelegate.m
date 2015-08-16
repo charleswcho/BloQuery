@@ -9,10 +9,13 @@
 #import "AppDelegate.h"
 #import "LogInViewController.h"
 #import "DetailViewController.h"
+#import "User.h"
+#import "Question.h"
 #import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+
 
 @interface AppDelegate ()
 
@@ -34,6 +37,8 @@
     [Parse enableLocalDatastore];
     
     // Initialize Parse.
+    [User registerSubclass];
+    [Question registerSubclass];
     [Parse setApplicationId:@"Fur1pXrZLPNW7kyavY7otL1SLaBqj0SmauqJ1itw"
                   clientKey:@"rkdFBeT93ehQehZ6eVGNEUn8x2PhNgIrrqhe1RCp"];
     
