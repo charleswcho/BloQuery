@@ -11,7 +11,7 @@
 
 @implementation User
 
-@dynamic interestLevel;
 @dynamic profilePic;
+@dynamic description;
 
 @end

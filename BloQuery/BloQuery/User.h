@@ -8,16 +8,9 @@
 
 #import <Parse/Parse.h>
 
-typedef NS_ENUM(NSInteger, interestLevel) {
-    interestLevelLow                    = 0,
-    interestLevelMedium                 = 1,
-    interestLevelHigh                   = 2,
-    interestLevelVeryHigh               = 3
-};
-
 @interface User : PFUser <PFSubclassing>
 
-@property (nonatomic, assign) interestLevel *interestLevel;
-@property (retain) UIImage *profilePic;
+@property (strong, nonatomic) UIImage *profilePic;
+@property (strong, nonatomic) NSString *description;
 
 @end

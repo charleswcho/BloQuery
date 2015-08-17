@@ -14,7 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicView;
 @property (weak, nonatomic) IBOutlet UILabel *questionTextLabel;
-@property (weak, nonatomic) IBOutlet UIButton *numberOfAnswersButton;
+@property (strong, nonatomic) IBOutlet UIButton *numberOfAnswersButton;
 @property (weak, nonatomic) IBOutlet UIImageView *interestLevelView;
 
 @end
@@ -39,11 +39,16 @@
 
 -(void) setQuestion:(Question *)question {
     self.questionTextLabel.text = question.questionText;
-//    self.numberOfAnswersButton = question.numberOfAnswers;  //-------------------------------------TODO  Create a custom class
+    
+    NSString *numberOfAnswersString = [question.numberOfAnswers stringValue];
+    [self.numberOfAnswersButton setTitle:numberOfAnswersString forState:UIControlStateNormal];
+    
     self.profilePicView.image = question.user.profilePic;
 //    self.interestLevelView = question.interestLevel;        //-------------------------------------TODO  Create a custom class
 
 }
+
+// ----------------------------Are these necessary?
 
 - (void)awakeFromNib {
     [super awakeFromNib];
