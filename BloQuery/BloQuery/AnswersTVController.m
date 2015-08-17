@@ -1,40 +1,34 @@
 //
-//  PFQTableViewController.m
+//  AnswersTVController.m
 //  BloQuery
 //
-//  Created by Charles Wesley Cho on 8/16/15.
+//  Created by Charles Wesley Cho on 8/17/15.
 //  Copyright (c) 2015 Charles Wesley Cho. All rights reserved.
 //
 
-#import "QuestionsTableViewController.h"
-#import "QuestionsCell.h"
 #import "AnswersTVController.h"
 #import "Question.h"
+#import "QuestionCellAnswerView.h"
 
-@interface QuestionsTableViewController ()
+@interface AnswersTVController ()
 
 @property (strong, nonatomic) Question *question;
 @property (strong, nonatomic) NSMutableArray *questions;
 
 @end
 
-@implementation QuestionsTableViewController
+@implementation AnswersTVController
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewQuestion:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewAnswer:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    
-    [self.tableView registerClass:[QuestionsCell class] forCellReuseIdentifier:@"QuestionCell"];
+    [self.tableView registerClass:[QuestionCellAnswerView class] forCellReuseIdentifier:@"QuestionCellAnswerView"];
+//    [self.tableView registerClass:[QuestionsCell class] forCellReuseIdentifier:@"AnswerCell"];
 }
 
-//---------------------------------Which one to use?
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//    
-//}
 
 #pragma mark - Parse setup
 
@@ -54,8 +48,8 @@
         // Whether the built-in pagination is enabled
         self.paginationEnabled = NO;
         
-//        self.objectsPerPage = 5;
-
+        //        self.objectsPerPage = 5;
+        
     }
     return self;
 }
@@ -69,14 +63,13 @@
 }
 
 
-- (void)insertNewQuestion:(id)sender {
+- (void)insertNewAnswer:(id)sender {
     if (self.question != nil) {
         [self.questions insertObject:self.question atIndex:0];
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
-
 
 #pragma mark - Table View
 
@@ -90,14 +83,21 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
 {
-    static NSString *simpleTableIdentifier = @"QuestionCell";
-    
     // Look into register cell bloctagram
-    QuestionsCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    if (cell == nil) {
-        cell = [[QuestionsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    
+    NSString *identifier;
+
+    if (indexPath.row == 0) {
+        identifier = @"QuestionCellAnswersView";
+    } else {
+        identifier = @"AnswerCell";
     }
-    cell.delegate = self;
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+
+    if (cell == nil) {
+        cell = [[QuestionsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
     
     return cell;
 }
@@ -105,7 +105,6 @@
 // Editing tableView
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
     return NO;
 }
 
@@ -116,29 +115,15 @@
     tableView.estimatedRowHeight = 100.0;
 }
 
-#pragma mark - Segues
+/*
+#pragma mark - Navigation
 
-// --------------------------------------------------------------Need to set up creating a new Question
-- (void)didPressAnswersButton:(UIButton *)answersButton {
-
-    QuestionsTableViewController *QuestionTVC = [[QuestionsTableViewController alloc] init];
-    
-    UIStoryboardSegue *showAnswers = [UIStoryboardSegue segueWithIdentifier:@"showAnswers"
-                                                                 source:self
-                                                            destination:QuestionTVC
-                                                         performHandler:nil];
-    [showAnswers perform];
-    
-}
-
+// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showAnswers"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        NSDate *object = self.objects[indexPath.row];
-//        [[segue destinationViewController] setDetailItem:object];
-    }
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
-
+*/
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

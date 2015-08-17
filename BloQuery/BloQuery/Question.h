@@ -15,10 +15,8 @@
 
 +(NSString *)parseClassName;
 
-@property (retain) User *user;
-@property (retain) UIImage *profilePic;
+@property (strong, nonatomic) User *user;
 @property (strong, nonatomic) NSString *questionText;
-@property (strong, nonatomic) NSNumber *numberOfAnswers;  // ???????? Link to number of answers
-@property (nonatomic, assign) interestLevel *interestLevel;  // Link to number of answers too
+//@property (strong, nonatomic) NSMutableArray *answersToQuestion;
 
 @end

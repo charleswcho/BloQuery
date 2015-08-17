@@ -8,14 +8,13 @@
 
 #import "AppDelegate.h"
 #import "LogInViewController.h"
-#import "DetailViewController.h"
 #import "User.h"
 #import "Question.h"
 #import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
-
+#import "QuestionsTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -26,11 +25,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    
+    // Look at bloctagram
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[LogInViewController alloc     ] init]];
-//    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[UIViewController alloc] init]];
     self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    
+    UINavigationController *navVC = (UINavigationController *)self.window.rootViewController;
     
     // [Optional] Power your app with Local Datastore. For more info, go to
     // https://parse.com/docs/ios_guide#localdatastore/iOS
@@ -45,6 +45,15 @@
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    // Determine whether or not to show the login screen
+    if (![PFUser currentUser]) {
+        LogInViewController *loginVC = [[LogInViewController alloc] init];
+        [navVC setViewControllers:@[loginVC] animated:YES];
+    } else {
+        QuestionsTableViewController *questionsVC = [[QuestionsTableViewController alloc] init];
+        [navVC setViewControllers:@[questionsVC] animated:YES];
+    }
+    
     
     // Adding Facebook integration
     [[FBSDKApplicationDelegate sharedInstance] application:application
@@ -55,6 +64,8 @@
     [PFTwitterUtils initializeWithConsumerKey:@"nC9P952CYwJtwc4wjZeXGiEIL"
                                consumerSecret:@"RRHQCDN6paMTs9VIlGVzL02oQvmKm78TpGVQg3ylRQWAycPYHl"];
     
+    self.window.rootViewController = navVC; [self.window makeKeyAndVisible];
+
     return YES;
 }
 

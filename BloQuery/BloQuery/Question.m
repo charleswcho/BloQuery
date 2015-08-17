@@ -13,10 +13,12 @@
 @implementation Question
 
 @dynamic user;
-@dynamic profilePic;
 @dynamic questionText;
-@dynamic numberOfAnswers;  // Need to link this property to the an
-@dynamic interestLevel;  // Link to number of answers too
+//@dynamic answersToQuestion;  // In progress
+
++(void)load {
+    [self registerSubclass];
+}
 
 +(NSString *)parseClassName {
     return @"Question";

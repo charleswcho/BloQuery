@@ -12,7 +12,7 @@
 
 @protocol QuestionsCellDelegate <NSObject>
 
--(void) cellDidPressAnswersButton:(QuestionsCell *)cell;
+-(void) didPressAnswersButton:(UIButton *)answersButton;
 
 @end
 
@@ -24,6 +24,6 @@
 
 @property (nonatomic, strong) Question *question;
 
-//+ (CGFloat)heightForQuestion:(Question *)question;
++ (CGFloat)heightForQuestion:(Question *)question;
 
 @end
