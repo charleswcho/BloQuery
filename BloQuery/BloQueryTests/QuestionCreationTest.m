@@ -28,7 +28,8 @@
 }
 
 - (void)questionCreationTest {
-    Question *question = [Question object];
+//    Question *question = [Question object];
+    Question *question = [Question objectWithClassName:@"Question"];
     question.questionText = @"I am a cute bunny";
     [question setObject:@"I am a cute bunny" forKey:@"questionText"];
 

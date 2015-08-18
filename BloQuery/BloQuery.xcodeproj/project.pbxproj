@@ -239,8 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				BA8AC1901B814385000D6A15 /* User.h */,
-				BA8AC1911B814385000D6A15 /* User.m */,
 				BA1F29A71B8166AB00219F95 /* Question.h */,
+				BA8AC1911B814385000D6A15 /* User.m */,
 				BA1F29A81B8166AB00219F95 /* Question.m */,
 			);
 			name = Model;
