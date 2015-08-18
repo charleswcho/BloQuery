@@ -16,10 +16,6 @@
 @dynamic questionText;
 //@dynamic answersToQuestion;  // In progress
 
-+(void)load {
-    [self registerSubclass];
-}
-
 +(NSString *)parseClassName {
     return @"Question";
 }
