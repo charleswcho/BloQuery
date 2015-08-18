@@ -17,7 +17,6 @@
 		BA8AC1251B7EA3FC000D6A15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8AC1231B7EA3FC000D6A15 /* Main.storyboard */; };
 		BA8AC1271B7EA3FC000D6A15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA8AC1261B7EA3FC000D6A15 /* Images.xcassets */; };
 		BA8AC12A1B7EA3FC000D6A15 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8AC1281B7EA3FC000D6A15 /* LaunchScreen.xib */; };
-		BA8AC1361B7EA3FC000D6A15 /* BloQueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC1351B7EA3FC000D6A15 /* BloQueryTests.m */; };
 		BA8AC1451B7EA4D5000D6A15 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8AC1431B7EA4D5000D6A15 /* Bolts.framework */; };
 		BA8AC1461B7EA4D5000D6A15 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8AC1441B7EA4D5000D6A15 /* Parse.framework */; };
 		BA8AC1481B7EA4F5000D6A15 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8AC1471B7EA4F5000D6A15 /* AudioToolbox.framework */; };
@@ -76,7 +75,6 @@
 		BA8AC1291B7EA3FC000D6A15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BA8AC12F1B7EA3FC000D6A15 /* BloQueryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BloQueryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8AC1341B7EA3FC000D6A15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA8AC1351B7EA3FC000D6A15 /* BloQueryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BloQueryTests.m; sourceTree = "<group>"; };
 		BA8AC1431B7EA4D5000D6A15 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		BA8AC1441B7EA4D5000D6A15 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		BA8AC1471B7EA4F5000D6A15 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -205,7 +203,6 @@
 		BA8AC1321B7EA3FC000D6A15 /* BloQueryTests */ = {
 			isa = PBXGroup;
 			children = (
-				BA8AC1351B7EA3FC000D6A15 /* BloQueryTests.m */,
 				BA8AC1331B7EA3FC000D6A15 /* Supporting Files */,
 			);
 			path = BloQueryTests;
@@ -438,7 +435,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA8AC1361B7EA3FC000D6A15 /* BloQueryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@
         <!--Master-->
         <scene sceneID="cUi-kZ-frf">
             <objects>
-                <navigationController title="Master" id="rS3-R9-Ivy" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="QuestionsView" title="Master" id="rS3-R9-Ivy" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -240,8 +240,8 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="gMx-3X-6X3"/>
                                             <exclude reference="ecg-4k-yhU"/>
+                                            <exclude reference="gMx-3X-6X3"/>
                                             <exclude reference="lBp-0t-kCx"/>
                                             <exclude reference="Hl2-Mf-yas"/>
                                             <exclude reference="vzz-Vd-PJa"/>
