@@ -13,6 +13,7 @@
 #import "logInViewControllerConfigure.h"
 #import "signUpViewControllerConfigure.h"
 #import "QuestionsTableViewController.h"
+#import "User.h"
 
 @interface LogInViewController ()
 
@@ -22,7 +23,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewDidLoad];
-    if (![PFUser currentUser]) { // No user logged in
+    if (![User currentUser]) { // No user logged in
         // Create the log in view controller
 
         logInViewControllerConfigure *login = [[logInViewControllerConfigure alloc] init];
@@ -58,7 +59,7 @@
 }
 
 // Sent to the delegate when a PFUser is logged in.
-- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(User *)user {
     [self dismissViewControllerAnimated:YES completion:NULL];
     
     QuestionsTableViewController *questionsTVC = [[QuestionsTableViewController alloc] init];
@@ -102,7 +103,7 @@
 }
 
 // Sent to the delegate when a PFUser is signed up.
-- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
+- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(User *)user {
     [self dismissViewControllerAnimated:true completion:nil]; // Dismiss the PFSignUpViewController
 }
 

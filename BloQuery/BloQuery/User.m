@@ -14,4 +14,9 @@
 @dynamic profilePic;
 @dynamic description;
 
++ (User* )currentUser
+{
+    return (User* )[PFUser currentUser];
+}
+
 @end

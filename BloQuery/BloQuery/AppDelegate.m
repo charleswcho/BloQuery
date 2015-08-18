@@ -45,7 +45,7 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     // Determine whether or not to show the login screen
-    if (![PFUser currentUser]) {
+    if (![User currentUser]) {
         LogInViewController *loginVC = [[LogInViewController alloc] init];
         [navVC setViewControllers:@[loginVC] animated:YES];
     } else {
@@ -62,6 +62,7 @@
     // Adding Twitter integration
     [PFTwitterUtils initializeWithConsumerKey:@"nC9P952CYwJtwc4wjZeXGiEIL"
                                consumerSecret:@"RRHQCDN6paMTs9VIlGVzL02oQvmKm78TpGVQg3ylRQWAycPYHl"];
+    
     
     self.window.rootViewController = navVC; [self.window makeKeyAndVisible];
 

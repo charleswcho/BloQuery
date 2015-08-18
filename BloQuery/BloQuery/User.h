@@ -10,7 +10,9 @@
 
 @interface User : PFUser <PFSubclassing>
 
-@property (strong, nonatomic) UIImage *profilePic;  
-@property (strong, nonatomic) NSString *description;
+@property (retain, nonatomic) UIImage *profilePic;
+@property (retain, nonatomic) NSString *description;
+
++ (User *)currentUser;
 
 @end
