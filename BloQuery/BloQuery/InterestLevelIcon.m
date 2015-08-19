@@ -8,10 +8,10 @@
 
 #import "interestLevelIcon.h"
 
-#define kinterestLevelLowImage @"interestLevelLow"
-#define kinterestLevelMediumImage @"interestLevelMedium"
-#define kinterestLevelHighImage @"interestLevelHigh"
-#define kinterestLevelVeryHighImage @"interestLevelVeryHigh"
+#define kinterestLevelLowImage @"InterestLevelLow"
+#define kinterestLevelMediumImage @"InterestLevelMedium"
+#define kinterestLevelHighImage @"InterestLevelHigh"
+#define kinterestLevelVeryHighImage @"InterestLevelVeryHigh"
 
 @interface interestLevelIcon ()
 

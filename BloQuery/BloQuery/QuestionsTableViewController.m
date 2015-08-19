@@ -13,28 +13,23 @@
 
 @interface QuestionsTableViewController ()
 
-@property (strong, nonatomic) Question *question;
+//@property (strong, nonatomic) Question *question;
 @property (strong, nonatomic) NSMutableArray *questions;
 
 @end
 
 @implementation QuestionsTableViewController
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewQuestion:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+//------------------------------------------------------TODO : Create a new Question HERE
+//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewQuestion:)];
+//    self.navigationItem.rightBarButtonItem = addButton;
     
     
     [self.tableView registerClass:[QuestionsCell class] forCellReuseIdentifier:@"QuestionCell"];
 }
-
-//---------------------------------Which one to use?
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//    
-//}
 
 #pragma mark - Parse setup
 
@@ -63,20 +58,26 @@
 - (PFQuery *)queryForTable
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    
-    [query orderByDescending:@"createdAt"];
+//    [query orderByDescending:@"createdAt"];
+//
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch an array of Questions from the Question class
+//        if (!error) {
+//            NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
+//            self.questions = mutableParseQuestions;  // Set local array to fetched Parse questions
+//        }
+//    }];
+//    
     return query;
 }
 
-
-- (void)insertNewQuestion:(id)sender {
-    if (self.question != nil) {
-        [self.questions insertObject:self.question atIndex:0];
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    }
-}
-
+//------------------------------------------------------TODO : Create a new Question HERE
+//- (void)insertNewQuestion:(id)sender {
+//    if (self.question != nil) {
+//        [self.questions insertObject:self.question atIndex:0];
+//        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//    }
+//}
 
 #pragma mark - Table View
 
@@ -85,18 +86,23 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.objects.count;
+    return self.questions.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
-{
-    static NSString *simpleTableIdentifier = @"QuestionCell";
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    static NSString *identifier = @"QuestionCell";
     
-    // Look into register cell bloctagram
-    QuestionsCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    QuestionsCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
-        cell = [[QuestionsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[QuestionsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    
+    cell.question = [self.questions objectAtIndex:indexPath.row];
+//    Question *question = [self.questions objectAtIndex:indexPath.row];
+//    
+//    question = cell.question;
+    
     cell.delegate = self;
     
     return cell;
@@ -119,7 +125,9 @@
 #pragma mark - Segues
 
 // --------------------------------------------------------------Need to set up creating a new Question
-- (void)didPressAnswersButton:(UIButton *)answersButton {
+// --------------------------------------------------------------Instead of using a Delegate method should I use a IBAction?
+
+- (void)cell:(QuestionsCell *)cell didPressAnswersButton:(UIButton *)numberOfAnswersButton {
 
     QuestionsTableViewController *QuestionTVC = [[QuestionsTableViewController alloc] init];
     
@@ -133,7 +141,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showAnswers"]) {
+        
 //        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
 //        NSDate *object = self.objects[indexPath.row];
 //        [[segue destinationViewController] setDetailItem:object];
     }

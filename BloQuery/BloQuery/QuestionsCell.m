@@ -38,11 +38,11 @@
 }
 
 -(void) setQuestion:(Question *)question {
-    
+    _question = question;
     self.profilePicView.image = question.user.profilePic;
     self.questionTextLabel.text = question.questionText;
     
-//    self.numberOfAnswersButton.titleLabel.text = question. + @"answers"
+//    self.numberOfAnswersButton.titleLabel.text = question. + @"answers"  //  Need to create an answers class because answers have properties too
     
 //    NSString *numberOfAnswersString = [question.numberOfAnswers stringValue];
 //    [self.numberOfAnswersButton setTitle:numberOfAnswersString forState:UIControlStateNormal];

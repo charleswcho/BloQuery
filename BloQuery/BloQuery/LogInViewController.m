@@ -14,6 +14,7 @@
 #import "signUpViewControllerConfigure.h"
 #import "QuestionsTableViewController.h"
 #import "User.h"
+#import "Question.h"
 
 @interface LogInViewController ()
 

@@ -12,7 +12,7 @@
 
 @protocol QuestionsCellDelegate <NSObject>
 
--(void) didPressAnswersButton:(UIButton *)answersButton;
+-(void) cell:(QuestionsCell *)cell didPressAnswersButton:(UIButton *)numberOfAnswersButton;
 
 @end
 
