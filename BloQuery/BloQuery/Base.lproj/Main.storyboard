@@ -9,13 +9,10 @@
         <!--Master-->
         <scene sceneID="cUi-kZ-frf">
             <objects>
-                <navigationController storyboardIdentifier="QuestionsView" title="Master" id="rS3-R9-Ivy" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavView" title="Master" id="rS3-R9-Ivy" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="pGg-6v-bdr" kind="relationship" relationship="rootViewController" id="RxB-wf-QIq"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
             </objects>
@@ -24,14 +21,14 @@
         <!--Master-->
         <scene sceneID="VgW-fR-Quf">
             <objects>
-                <tableViewController title="Master" id="pGg-6v-bdr" customClass="QuestionsTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="QuestionsView" title="Master" id="pGg-6v-bdr" customClass="QuestionsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mLL-gJ-YKr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionCell" rowHeight="100" id="UaC-CY-51z" customClass="QuestionsCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="QuestionCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionsCell" rowHeight="100" id="UaC-CY-51z" customClass="QuestionsCell">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UaC-CY-51z" id="rtm-EN-dRA">

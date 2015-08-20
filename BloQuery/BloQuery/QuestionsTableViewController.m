@@ -13,7 +13,6 @@
 
 @interface QuestionsTableViewController ()
 
-//@property (strong, nonatomic) Question *question;
 @property (strong, nonatomic) NSMutableArray *questions;
 
 @end
@@ -26,10 +25,19 @@
 //------------------------------------------------------TODO : Create a new Question HERE
 //    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewQuestion:)];
 //    self.navigationItem.rightBarButtonItem = addButton;
+
     
+    [self.tableView registerClass:[QuestionsCell class] forCellReuseIdentifier:@"QuestionsCell"];
     
-    [self.tableView registerClass:[QuestionsCell class] forCellReuseIdentifier:@"QuestionCell"];
-}
+    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    [query orderByDescending:@"createdAt"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch an array of Questions from the Question class
+        if (!error) {
+            NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
+            self.questions = mutableParseQuestions;  // Set local array to fetched Parse questions
+        }
+    }];}
 
 #pragma mark - Parse setup
 
@@ -58,15 +66,8 @@
 - (PFQuery *)queryForTable
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-//    [query orderByDescending:@"createdAt"];
-//
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch an array of Questions from the Question class
-//        if (!error) {
-//            NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
-//            self.questions = mutableParseQuestions;  // Set local array to fetched Parse questions
-//        }
-//    }];
-//    
+    [query orderByDescending:@"createdAt"];
+    
     return query;
 }
 
@@ -91,17 +92,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    static NSString *identifier = @"QuestionCell";
+    self.question = [self.questions objectAtIndex:indexPath.row]; // Save
+
+    static NSString *identifier = @"QuestionsCell";
     
-    QuestionsCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (cell == nil) {
-        cell = [[QuestionsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
+    QuestionsCell *cell = (QuestionsCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
+
     
-    cell.question = [self.questions objectAtIndex:indexPath.row];
-//    Question *question = [self.questions objectAtIndex:indexPath.row];
-//    
-//    question = cell.question;
+    [cell setQuestion:self.question];
     
     cell.delegate = self;
     

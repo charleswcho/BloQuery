@@ -27,26 +27,29 @@
     [super tearDown];
 }
 
-- (void)questionCreationTest {
+- (void)testThatQuestionCreation
+{
 //    Question *question = [Question object];
-    Question *question2 = [Question objectWithClassName:@"Question"];
-    question2.questionText = @"I am a cute bunny";
-    [question2 setObject:@"I am a cute bunny" forKey:@"questionText"];
-
-    [question2 save];
-    
+//    Question *question2 = [Question objectWithClassName:@"Question"];
+//    question2.questionText = @"I am a cute bunny";
+//    [question2 setObject:@"I am a cute bunny" forKey:@"questionText"];
+//
+//    [question2 save];
+//    
     
     //------------------------------------------------------------------// TEST
-//    Question *question = [Question objectWithClassName:@"Question"];
-//    question.questionText = @"I am a cute bunny";
-//    
-//    [question saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (succeeded) {
-//            // The object has been saved.
-//        } else {
-//            // There was a problem, check error.description
-//        }
-//    }];
+    Question *question = [Question objectWithClassName:@"Question"];
+    question.questionText = @"I am a cute bunny";
+    
+    [question saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+        } else {
+            // There was a problem, check error.description
+        }
+    }];
+    
+//    XCTAssertEqual(1, 1, "one should be equal to one");
     //------------------------------------------------------------------// TEST
 }
 

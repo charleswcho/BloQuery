@@ -27,11 +27,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window.backgroundColor = [UIColor whiteColor];
-    
+    UINavigationController *navVC = (UINavigationController *) self.window.rootViewController;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    UINavigationController *navVC = [storyboard instantiateViewControllerWithIdentifier:@"QuestionsView"];
-    
+
     // [Optional] Power your app with Local Datastore. For more info, go to
     // https://parse.com/docs/ios_guide#localdatastore/iOS
     [Parse enableLocalDatastore];
@@ -50,8 +48,7 @@
         LogInViewController *loginVC = [[LogInViewController alloc] init];
         [navVC setViewControllers:@[loginVC] animated:YES];
     } else {
-        QuestionsTableViewController *questionsVC = [[QuestionsTableViewController alloc] init];
-        [navVC setViewControllers:@[questionsVC] animated:YES];
+      [navVC pushViewController:[storyboard instantiateViewControllerWithIdentifier:@"QuestionsView"] animated:NO];
     }
     
     
@@ -65,7 +62,8 @@
                                consumerSecret:@"RRHQCDN6paMTs9VIlGVzL02oQvmKm78TpGVQg3ylRQWAycPYHl"];
     
     
-    self.window.rootViewController = navVC; [self.window makeKeyAndVisible];
+    self.window.rootViewController = navVC;
+    [self.window makeKeyAndVisible];
 
     return YES;
 }

@@ -63,8 +63,10 @@
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(User *)user {
     [self dismissViewControllerAnimated:YES completion:NULL];
     
-    QuestionsTableViewController *questionsTVC = [[QuestionsTableViewController alloc] init];
-    [self presentViewController:questionsTVC animated:YES completion:NULL];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+
+    [self.navigationController pushViewController:[storyboard instantiateViewControllerWithIdentifier:@"QuestionsView"] animated:NO];
+
     
 }
 

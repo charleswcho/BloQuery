@@ -12,4 +12,6 @@
 
 @interface QuestionsTableViewController : PFQueryTableViewController <QuestionsCellDelegate>
 
+@property (nonatomic, strong) Question *question;
+
 @end

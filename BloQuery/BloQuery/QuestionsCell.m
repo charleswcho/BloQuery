@@ -5,7 +5,6 @@
 //  Created by Charles Wesley Cho on 8/14/15.
 //  Copyright (c) 2015 Charles Wesley Cho. All rights reserved.
 //
-
 #import "QuestionsCell.h"
 #import "Question.h"
 #import "User.h"
@@ -38,7 +37,6 @@
 }
 
 -(void) setQuestion:(Question *)question {
-    _question = question;
     self.profilePicView.image = question.user.profilePic;
     self.questionTextLabel.text = question.questionText;
     
@@ -53,9 +51,10 @@
 
 // ----------------------------Are these necessary?
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-}
+//- (void)awakeFromNib {
+//    [super awakeFromNib];
+//    
+//}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
