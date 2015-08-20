@@ -61,11 +61,12 @@
 
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(User *)user {
+    
     [self dismissViewControllerAnimated:YES completion:NULL];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 
-    [self.navigationController pushViewController:[storyboard instantiateViewControllerWithIdentifier:@"QuestionsView"] animated:NO];
+   [self.navigationController pushViewController:[storyboard instantiateViewControllerWithIdentifier:@"QuestionsView"] animated:NO];
 
     
 }

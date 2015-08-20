@@ -22,7 +22,7 @@
         <scene sceneID="VgW-fR-Quf">
             <objects>
                 <tableViewController storyboardIdentifier="QuestionsView" title="Master" id="pGg-6v-bdr" customClass="QuestionsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mLL-gJ-YKr">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mLL-gJ-YKr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,13 +34,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UaC-CY-51z" id="rtm-EN-dRA">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oDS-vq-qZe">
-                                            <rect key="frame" x="492" y="0.0" width="100" height="100"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="100" id="FJC-KK-and"/>
-                                                <constraint firstAttribute="width" constant="100" id="Fxf-Hb-tTW"/>
-                                            </constraints>
-                                        </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fI8-qp-3YR">
                                             <rect key="frame" x="8" y="62" width="120" height="30"/>
                                             <color key="backgroundColor" red="0.01176470588" green="0.68627450980000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -72,6 +65,13 @@
                                                 <constraint firstAttribute="width" constant="60" id="l8w-mq-zqS"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oDS-vq-qZe">
+                                            <rect key="frame" x="492" y="0.0" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="FJC-KK-and"/>
+                                                <constraint firstAttribute="width" constant="100" id="Fxf-Hb-tTW"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="oDS-vq-qZe" firstAttribute="leading" secondItem="Sy4-cV-POp" secondAttribute="trailing" constant="8" id="1Aa-u2-Yfp"/>
@@ -99,11 +99,13 @@
                                         <constraint firstItem="Sy4-cV-POp" firstAttribute="leading" secondItem="rtm-EN-dRA" secondAttribute="leadingMargin" id="qyg-35-PtC"/>
                                         <constraint firstItem="yuu-dH-v3v" firstAttribute="leading" secondItem="fI8-qp-3YR" secondAttribute="trailing" constant="8" id="yhD-Jk-kjl"/>
                                         <constraint firstItem="yuu-dH-v3v" firstAttribute="bottom" secondItem="rtm-EN-dRA" secondAttribute="bottomMargin" id="yj3-79-d9N"/>
+                                        <constraint firstItem="Sy4-cV-POp" firstAttribute="top" secondItem="rtm-EN-dRA" secondAttribute="topMargin" id="zl7-0C-998"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="7bG-gq-9ac"/>
                                             <exclude reference="DDB-xc-aDs"/>
+                                            <exclude reference="Kfa-tk-fsX"/>
                                             <exclude reference="bqW-B9-hT4"/>
                                             <exclude reference="OWl-Ld-XpS"/>
                                             <exclude reference="YiY-wq-rWb"/>
@@ -123,7 +125,7 @@
                                     <outlet property="interestLevelView" destination="yuu-dH-v3v" id="nKa-Kf-Qxq"/>
                                     <outlet property="numberOfAnswersButton" destination="fI8-qp-3YR" id="MuD-ee-3UN"/>
                                     <outlet property="profilePicView" destination="oDS-vq-qZe" id="iAR-6q-30z"/>
-                                    <outlet property="questionTextLabel" destination="Sy4-cV-POp" id="4RM-W7-9oB"/>
+                                    <outlet property="questionTextLabel" destination="Sy4-cV-POp" id="Q7f-Ig-8MN"/>
                                     <segue destination="636-dO-YgI" kind="showDetail" identifier="showAnswers" id="IuN-rY-568"/>
                                 </connections>
                             </tableViewCell>

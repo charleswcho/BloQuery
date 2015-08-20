@@ -27,8 +27,6 @@
 //    self.navigationItem.rightBarButtonItem = addButton;
 
     
-    [self.tableView registerClass:[QuestionsCell class] forCellReuseIdentifier:@"QuestionsCell"];
-    
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     [query orderByDescending:@"createdAt"];
     
@@ -39,6 +37,8 @@
         }
     }];
     
+    // Have to reset this back to showing
+    self.navigationItem.hidesBackButton = YES;
 }
 
 #pragma mark - Parse setup

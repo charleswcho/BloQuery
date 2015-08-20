@@ -11,10 +11,6 @@
 
 @interface QuestionsCell ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *profilePicView;
-@property (weak, nonatomic) IBOutlet UILabel *questionTextLabel;
-@property (strong, nonatomic) IBOutlet UIButton *numberOfAnswersButton;
-@property (weak, nonatomic) IBOutlet UIImageView *interestLevelView;
 
 @end
 
@@ -36,6 +32,17 @@
     return MAX(minHeight, boundingBox.size.height);
 }
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    
+    // Configure the view for the selected state
+}
+
 -(void) setQuestion:(Question *)question {
     self.profilePicView.image = question.user.profilePic;
     self.questionTextLabel.text = question.questionText;
@@ -51,16 +58,7 @@
 
 // ----------------------------Are these necessary?
 
-//- (void)awakeFromNib {
-//    [super awakeFromNib];
-//    
-//}
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 
 @end

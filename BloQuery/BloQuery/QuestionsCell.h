@@ -20,6 +20,11 @@
 
 @interface QuestionsCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *profilePicView;
+@property (weak, nonatomic) IBOutlet UILabel *questionTextLabel;
+@property (strong, nonatomic) IBOutlet UIButton *numberOfAnswersButton;
+@property (weak, nonatomic) IBOutlet UIImageView *interestLevelView;
+
 @property (nonatomic, weak) id <QuestionsCellDelegate> delegate;
 
 + (CGFloat)heightForQuestion:(Question *)question;
