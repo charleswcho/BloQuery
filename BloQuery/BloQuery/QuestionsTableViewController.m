@@ -37,7 +37,9 @@
             NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
             self.questions = mutableParseQuestions;  // Set local array to fetched Parse questions
         }
-    }];}
+    }];
+    
+}
 
 #pragma mark - Parse setup
 
@@ -92,14 +94,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    self.question = [self.questions objectAtIndex:indexPath.row]; // Save
+    self.question = [self.questions objectAtIndex:indexPath.row]; // Save one question from row
 
     static NSString *identifier = @"QuestionsCell";
     
-    QuestionsCell *cell = (QuestionsCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
+    QuestionsCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
 
+    if (cell == nil) {
+        cell = [[QuestionsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
     
-    [cell setQuestion:self.question];
+    [cell setQuestion:self.question];  //
     
     cell.delegate = self;
     
@@ -115,10 +120,10 @@
 
 // Allow for autolayout cell height
 
-- (void)configureTableView:(UITableView *)tableView {
-    tableView.rowHeight = UITableViewAutomaticDimension;
-    tableView.estimatedRowHeight = 100.0;
-}
+//- (void)configureTableView:(UITableView *)tableView {
+//    tableView.rowHeight = UITableViewAutomaticDimension;
+//    tableView.estimatedRowHeight = 100.0;
+//}
 
 #pragma mark - Segues
 

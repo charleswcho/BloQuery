@@ -29,14 +29,6 @@
 
 - (void)testThatQuestionCreation
 {
-//    Question *question = [Question object];
-//    Question *question2 = [Question objectWithClassName:@"Question"];
-//    question2.questionText = @"I am a cute bunny";
-//    [question2 setObject:@"I am a cute bunny" forKey:@"questionText"];
-//
-//    [question2 save];
-//    
-    
     //------------------------------------------------------------------// TEST
     Question *question = [Question objectWithClassName:@"Question"];
     question.questionText = @"I am a cute bunny";
