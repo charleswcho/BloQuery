@@ -46,6 +46,7 @@
 		BABD8F6E1B852CEC00F1F519 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABD8F6D1B852CEC00F1F519 /* ParseUI.framework */; };
 		BABD8F701B852D0600F1F519 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABD8F6F1B852D0600F1F519 /* ParseTwitterUtils.framework */; };
 		BABD8F721B852D7E00F1F519 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABD8F711B852D7E00F1F519 /* Parse.framework */; };
+		BABD8F751B866A6D00F1F519 /* QuestionsTextLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD8F741B866A6D00F1F519 /* QuestionsTextLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,8 @@
 		BABD8F6D1B852CEC00F1F519 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		BABD8F6F1B852D0600F1F519 /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
 		BABD8F711B852D7E00F1F519 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Downloads/parse-library-1.8.1/Parse.framework"; sourceTree = "<group>"; };
+		BABD8F731B866A6D00F1F519 /* QuestionsTextLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsTextLabel.h; sourceTree = "<group>"; };
+		BABD8F741B866A6D00F1F519 /* QuestionsTextLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsTextLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +328,8 @@
 				BA8AC1831B8109C9000D6A15 /* QuestionsTableViewController.m */,
 				BA8AC17C1B7EC566000D6A15 /* QuestionsCell.h */,
 				BA8AC17D1B7EC566000D6A15 /* QuestionsCell.m */,
+				BABD8F731B866A6D00F1F519 /* QuestionsTextLabel.h */,
+				BABD8F741B866A6D00F1F519 /* QuestionsTextLabel.m */,
 			);
 			name = "Questions view";
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 				BA55ADAD1B82917F00985717 /* QuestionCellAnswerView.m in Sources */,
 				BA55ADB11B8291B200985717 /* AnswerCell.m in Sources */,
 				BA8AC17E1B7EC566000D6A15 /* QuestionsCell.m in Sources */,
+				BABD8F751B866A6D00F1F519 /* QuestionsTextLabel.m in Sources */,
 				BA8AC1711B7EBDC3000D6A15 /* signUpViewControllerConfigure.m in Sources */,
 				BA8AC15F1B7EA626000D6A15 /* LogInViewController.m in Sources */,
 				BA8AC1841B8109C9000D6A15 /* QuestionsTableViewController.m in Sources */,

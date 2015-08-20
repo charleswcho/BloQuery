@@ -25,7 +25,6 @@
 //------------------------------------------------------TODO : Create a new Question HERE
 //    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewQuestion:)];
 //    self.navigationItem.rightBarButtonItem = addButton;
-
     
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     [query orderByDescending:@"createdAt"];
@@ -36,6 +35,7 @@
             self.questions = mutableParseQuestions;  // Set local array to fetched Parse questions
         }
     }];
+    
     
     // Have to reset this back to showing
     self.navigationItem.hidesBackButton = YES;
@@ -107,6 +107,7 @@
     [cell setQuestion:self.question];  //
     
     cell.delegate = self;
+
     
     return cell;
 }
@@ -119,11 +120,12 @@
 }
 
 // Allow for autolayout cell height
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    tableView.estimatedRowHeight = 116.0;
+    return UITableViewAutomaticDimension;
+}
 
-//- (void)configureTableView:(UITableView *)tableView {
-//    tableView.rowHeight = UITableViewAutomaticDimension;
-//    tableView.estimatedRowHeight = 100.0;
-//}
 
 #pragma mark - Segues
 

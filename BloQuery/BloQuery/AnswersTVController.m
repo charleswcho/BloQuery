@@ -25,8 +25,8 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewAnswer:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    [self.tableView registerClass:[QuestionCellAnswerView class] forCellReuseIdentifier:@"QuestionCellAnswerView"];
-//    [self.tableView registerClass:[QuestionsCell class] forCellReuseIdentifier:@"AnswerCell"];
+    self.navigationItem.hidesBackButton = NO;
+
 }
 
 

@@ -19,7 +19,7 @@
 + (CGFloat)heightForQuestion:(Question *)question {
 //    const CGFloat topMargin = 0.0f;
 //    const CGFloat bottomMargin = 0.0f;
-    const CGFloat minHeight = 100.0f;
+    const CGFloat minHeight = 116.0f;
     
     UIFont *font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     
@@ -34,6 +34,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    [self.numberOfAnswersButton.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    [self.numberOfAnswersButton.layer setBorderWidth:1];
+
     
 }
 
