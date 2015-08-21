@@ -120,9 +120,11 @@
 }
 
 // Allow for autolayout cell height
+
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    tableView.estimatedRowHeight = 116.0;
+    tableView.estimatedRowHeight = 140.0;
+    
     return UITableViewAutomaticDimension;
 }
 

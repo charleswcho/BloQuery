@@ -15,7 +15,6 @@
 		BA8AC1191B7EA3FC000D6A15 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC1181B7EA3FC000D6A15 /* main.m */; };
 		BA8AC11C1B7EA3FC000D6A15 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC11B1B7EA3FC000D6A15 /* AppDelegate.m */; };
 		BA8AC1251B7EA3FC000D6A15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA8AC1231B7EA3FC000D6A15 /* Main.storyboard */; };
-		BA8AC1271B7EA3FC000D6A15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA8AC1261B7EA3FC000D6A15 /* Images.xcassets */; };
 		BA8AC12A1B7EA3FC000D6A15 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8AC1281B7EA3FC000D6A15 /* LaunchScreen.xib */; };
 		BA8AC1481B7EA4F5000D6A15 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8AC1471B7EA4F5000D6A15 /* AudioToolbox.framework */; };
 		BA8AC14A1B7EA4FC000D6A15 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8AC1491B7EA4FC000D6A15 /* CFNetwork.framework */; };
@@ -47,6 +46,7 @@
 		BABD8F701B852D0600F1F519 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABD8F6F1B852D0600F1F519 /* ParseTwitterUtils.framework */; };
 		BABD8F721B852D7E00F1F519 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABD8F711B852D7E00F1F519 /* Parse.framework */; };
 		BABD8F751B866A6D00F1F519 /* QuestionsTextLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD8F741B866A6D00F1F519 /* QuestionsTextLabel.m */; };
+		BABD8F771B86ABA300F1F519 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BABD8F761B86ABA300F1F519 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +76,6 @@
 		BA8AC11A1B7EA3FC000D6A15 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BA8AC11B1B7EA3FC000D6A15 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BA8AC1241B7EA3FC000D6A15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BA8AC1261B7EA3FC000D6A15 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BA8AC1291B7EA3FC000D6A15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BA8AC12F1B7EA3FC000D6A15 /* BloQueryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BloQueryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8AC1341B7EA3FC000D6A15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,6 +116,7 @@
 		BABD8F711B852D7E00F1F519 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Downloads/parse-library-1.8.1/Parse.framework"; sourceTree = "<group>"; };
 		BABD8F731B866A6D00F1F519 /* QuestionsTextLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsTextLabel.h; sourceTree = "<group>"; };
 		BABD8F741B866A6D00F1F519 /* QuestionsTextLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsTextLabel.m; sourceTree = "<group>"; };
+		BABD8F761B86ABA300F1F519 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../../.Trash/Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +198,6 @@
 				BA8AC13F1B7EA405000D6A15 /* Controllers */,
 				BA8AC1411B7EA408000D6A15 /* Views */,
 				BA8AC1401B7EA406000D6A15 /* Model */,
-				BA8AC1261B7EA3FC000D6A15 /* Images.xcassets */,
 				BA8AC1161B7EA3FC000D6A15 /* Supporting Files */,
 			);
 			path = BloQuery;
@@ -257,6 +256,7 @@
 			children = (
 				BA8AC1231B7EA3FC000D6A15 /* Main.storyboard */,
 				BA8AC1281B7EA3FC000D6A15 /* LaunchScreen.xib */,
+				BABD8F761B86ABA300F1F519 /* Images.xcassets */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -414,9 +414,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BABD8F771B86ABA300F1F519 /* Images.xcassets in Resources */,
 				BA8AC1251B7EA3FC000D6A15 /* Main.storyboard in Resources */,
 				BA8AC12A1B7EA3FC000D6A15 /* LaunchScreen.xib in Resources */,
-				BA8AC1271B7EA3FC000D6A15 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

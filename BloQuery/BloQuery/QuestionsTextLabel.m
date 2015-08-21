@@ -8,41 +8,12 @@
 
 #import "QuestionsTextLabel.h"
 
-@interface QuestionsTextLabel()
-
-@property (nonatomic) UIEdgeInsets edgeInsets;
-
-@end
-
 @implementation QuestionsTextLabel
 
-
-
-- (CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)numberOfLines
-{
-    
-    UIEdgeInsets insets = self.edgeInsets;
-    CGRect rect = [super textRectForBounds:UIEdgeInsetsInsetRect(bounds, insets)
-                    limitedToNumberOfLines:numberOfLines];
-    
-    rect.origin.x    -= insets.left;
-    rect.origin.y    -= insets.top;
-    rect.size.width  += (insets.left + insets.right);
-    rect.size.height += (insets.top + insets.bottom);
-    
-    return rect;
+//------------------------------------------- Need to fix
+- (void)drawTextInRect:(CGRect)rect {
+    UIEdgeInsets insets = {0, 10, 0, 0};
+    [super drawTextInRect:UIEdgeInsetsInsetRect(rect, insets)];
 }
-
-- (void)drawTextInRect:(CGRect)rect
-{
-    [super drawTextInRect:UIEdgeInsetsInsetRect(rect, self.edgeInsets)];
-}
-
-
-//- (void)drawTextInRect:(CGRect)rect {
-//    UIEdgeInsets insets = {5, 5, 5, 5};
-//    [super drawTextInRect:UIEdgeInsetsInsetRect(rect, insets)];
-//}
-
 
 @end

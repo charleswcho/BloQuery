@@ -82,12 +82,29 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InterestLevelVeryHigh" translatesAutoresizingMaskIntoConstraints="NO" id="erd-i1-egY">
+                                            <rect key="frame" x="118" y="83" width="44" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="LNG-e7-268"/>
+                                                <constraint firstAttribute="height" constant="25" id="b3Z-Cm-z2K"/>
+                                                <constraint firstAttribute="height" constant="33" id="m43-Y3-cx8"/>
+                                                <constraint firstAttribute="width" constant="58" id="vR8-gd-o7D"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="m43-Y3-cx8"/>
+                                                    <exclude reference="vR8-gd-o7D"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstItem="erd-i1-egY" firstAttribute="leading" secondItem="fI8-qp-3YR" secondAttribute="trailing" constant="10" id="086-KK-L6C"/>
                                         <constraint firstItem="Sy4-cV-POp" firstAttribute="top" secondItem="rtm-EN-dRA" secondAttribute="top" constant="8" id="4Zo-rc-x24"/>
                                         <constraint firstItem="z2d-Tt-9sZ" firstAttribute="top" secondItem="rtm-EN-dRA" secondAttribute="top" constant="8" id="7Vg-OO-5th"/>
                                         <constraint firstItem="fI8-qp-3YR" firstAttribute="leading" secondItem="rtm-EN-dRA" secondAttribute="leading" constant="8" id="Cmd-bL-gcK"/>
+                                        <constraint firstItem="erd-i1-egY" firstAttribute="top" secondItem="Sy4-cV-POp" secondAttribute="bottom" constant="8" id="DKa-I5-kWO"/>
                                         <constraint firstAttribute="trailing" secondItem="Sy4-cV-POp" secondAttribute="trailing" constant="8" id="GNH-N9-vk7"/>
                                         <constraint firstItem="z2d-Tt-9sZ" firstAttribute="leading" secondItem="Sy4-cV-POp" secondAttribute="trailing" constant="8" id="LSS-ZB-7ip"/>
                                         <constraint firstAttribute="bottom" secondItem="z2d-Tt-9sZ" secondAttribute="bottom" constant="57.5" id="Mtt-tu-bQe"/>
@@ -96,12 +113,19 @@
                                         <constraint firstAttribute="bottom" secondItem="fI8-qp-3YR" secondAttribute="bottom" constant="8" id="bHh-13-Zy8"/>
                                         <constraint firstItem="Sy4-cV-POp" firstAttribute="leading" secondItem="rtm-EN-dRA" secondAttribute="leading" constant="8" id="cLs-IA-Tqg"/>
                                         <constraint firstAttribute="trailing" secondItem="z2d-Tt-9sZ" secondAttribute="trailing" constant="8" id="dpu-Wz-4Zw"/>
+                                        <constraint firstItem="erd-i1-egY" firstAttribute="leading" secondItem="fI8-qp-3YR" secondAttribute="trailing" constant="8" id="hV1-Ha-GNL"/>
+                                        <constraint firstAttribute="bottom" secondItem="erd-i1-egY" secondAttribute="bottom" constant="8" id="imU-jR-Yl8"/>
                                         <constraint firstItem="fI8-qp-3YR" firstAttribute="top" secondItem="Sy4-cV-POp" secondAttribute="bottom" constant="8" id="s4Y-Wc-RxO"/>
                                         <constraint firstItem="z2d-Tt-9sZ" firstAttribute="leading" secondItem="fI8-qp-3YR" secondAttribute="trailing" constant="384" id="uIc-ii-PPg"/>
+                                        <constraint firstAttribute="bottom" secondItem="erd-i1-egY" secondAttribute="bottom" id="yEL-Oq-No0"/>
+                                        <constraint firstItem="erd-i1-egY" firstAttribute="top" secondItem="Sy4-cV-POp" secondAttribute="bottom" constant="8" id="zKv-ra-YyP"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="GNH-N9-vk7"/>
+                                            <exclude reference="hV1-Ha-GNL"/>
+                                            <exclude reference="yEL-Oq-No0"/>
+                                            <exclude reference="zKv-ra-YyP"/>
                                             <exclude reference="Mtt-tu-bQe"/>
                                             <exclude reference="Qcb-2a-M3H"/>
                                             <exclude reference="S5x-d2-CUf"/>
@@ -254,7 +278,6 @@
         <!--Navigation Controller-->
         <scene sceneID="DAk-sd-M2q">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zDD-dZ-8t8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="636-dO-YgI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5f1-hw-OlX">
@@ -266,11 +289,13 @@
                         <segue destination="Tkb-Hd-ugk" kind="relationship" relationship="rootViewController" id="g0j-KQ-5QX"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zDD-dZ-8t8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1355" y="64"/>
         </scene>
     </scenes>
     <resources>
         <image name="1" width="756" height="768"/>
+        <image name="InterestLevelVeryHigh" width="177" height="100"/>
     </resources>
 </document>
