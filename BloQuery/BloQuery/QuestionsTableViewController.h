@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "QuestionsCell.h"
 
-@interface QuestionsTableViewController : PFQueryTableViewController <QuestionsCellDelegate>
+@interface QuestionsTableViewController : PFQueryTableViewController // <QuestionsCellDelegate>
 
 @property (nonatomic, strong) Question *question;
 

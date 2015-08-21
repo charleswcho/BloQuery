@@ -1,22 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="R0K-IS-7I7">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Master-->
-        <scene sceneID="cUi-kZ-frf">
-            <objects>
-                <navigationController storyboardIdentifier="NavView" title="Master" id="rS3-R9-Ivy" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-153" y="64"/>
-        </scene>
         <!--Master-->
         <scene sceneID="VgW-fR-Quf">
             <objects>
@@ -32,39 +20,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UaC-CY-51z" id="rtm-EN-dRA">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy4-cV-POp" customClass="QuestionsTextLabel">
-                                            <rect key="frame" x="8" y="8" width="526" height="67"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="3"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="z2d-Tt-9sZ">
-                                            <rect key="frame" x="542" y="8" width="50" height="50"/>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="100" id="Cco-RB-WnH"/>
-                                                <constraint firstAttribute="height" constant="50" id="bNi-sp-uHY"/>
-                                                <constraint firstAttribute="width" constant="50" id="tuV-J4-VYi"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="25"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                            </userDefinedRuntimeAttributes>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="Cco-RB-WnH"/>
-                                                </mask>
-                                            </variation>
-                                        </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fI8-qp-3YR">
                                             <rect key="frame" x="8" y="83" width="100" height="25"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -83,7 +38,7 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <segue destination="Tkb-Hd-ugk" kind="show" identifier="showAnswers" id="Nab-D4-ibg"/>
+                                                <segue destination="Tkb-Hd-ugk" kind="show" identifier="showAnswers" id="Hzs-Pa-hud"/>
                                             </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InterestLevelLow" translatesAutoresizingMaskIntoConstraints="NO" id="erd-i1-egY">
@@ -101,26 +56,48 @@
                                                 </mask>
                                             </variation>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wesley" translatesAutoresizingMaskIntoConstraints="NO" id="BaL-EY-87A">
+                                            <rect key="frame" x="542" y="8" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="Bet-wD-FKk"/>
+                                                <constraint firstAttribute="width" constant="50" id="HvW-fQ-dL0"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="25"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy4-cV-POp" customClass="QuestionsTextLabel">
+                                            <rect key="frame" x="8" y="8" width="526" height="67"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="erd-i1-egY" firstAttribute="leading" secondItem="fI8-qp-3YR" secondAttribute="trailing" constant="10" id="086-KK-L6C"/>
                                         <constraint firstItem="Sy4-cV-POp" firstAttribute="top" secondItem="rtm-EN-dRA" secondAttribute="top" constant="8" id="4Zo-rc-x24"/>
-                                        <constraint firstItem="z2d-Tt-9sZ" firstAttribute="top" secondItem="rtm-EN-dRA" secondAttribute="top" constant="8" id="7Vg-OO-5th"/>
                                         <constraint firstItem="fI8-qp-3YR" firstAttribute="leading" secondItem="rtm-EN-dRA" secondAttribute="leading" constant="8" id="Cmd-bL-gcK"/>
                                         <constraint firstItem="erd-i1-egY" firstAttribute="top" secondItem="Sy4-cV-POp" secondAttribute="bottom" constant="8" id="DKa-I5-kWO"/>
                                         <constraint firstAttribute="trailing" secondItem="Sy4-cV-POp" secondAttribute="trailing" constant="8" id="GNH-N9-vk7"/>
-                                        <constraint firstItem="z2d-Tt-9sZ" firstAttribute="leading" secondItem="Sy4-cV-POp" secondAttribute="trailing" constant="8" id="LSS-ZB-7ip"/>
-                                        <constraint firstAttribute="bottom" secondItem="z2d-Tt-9sZ" secondAttribute="bottom" constant="57.5" id="Mtt-tu-bQe"/>
-                                        <constraint firstAttribute="bottom" secondItem="z2d-Tt-9sZ" secondAttribute="bottom" constant="8" id="Qcb-2a-M3H"/>
-                                        <constraint firstItem="z2d-Tt-9sZ" firstAttribute="bottom" secondItem="rtm-EN-dRA" secondAttribute="bottomMargin" id="S5x-d2-CUf"/>
+                                        <constraint firstItem="BaL-EY-87A" firstAttribute="leading" secondItem="Sy4-cV-POp" secondAttribute="trailing" constant="8" id="JnT-Tb-wBO"/>
+                                        <constraint firstAttribute="trailing" secondItem="BaL-EY-87A" secondAttribute="trailing" constant="8" id="QEO-ZT-5hF"/>
+                                        <constraint firstItem="BaL-EY-87A" firstAttribute="top" secondItem="rtm-EN-dRA" secondAttribute="top" constant="8" id="XRz-Si-URX"/>
                                         <constraint firstAttribute="bottom" secondItem="fI8-qp-3YR" secondAttribute="bottom" constant="8" id="bHh-13-Zy8"/>
                                         <constraint firstItem="Sy4-cV-POp" firstAttribute="leading" secondItem="rtm-EN-dRA" secondAttribute="leading" constant="8" id="cLs-IA-Tqg"/>
-                                        <constraint firstAttribute="trailing" secondItem="z2d-Tt-9sZ" secondAttribute="trailing" constant="8" id="dpu-Wz-4Zw"/>
                                         <constraint firstItem="erd-i1-egY" firstAttribute="leading" secondItem="fI8-qp-3YR" secondAttribute="trailing" constant="8" id="hV1-Ha-GNL"/>
                                         <constraint firstAttribute="bottom" secondItem="erd-i1-egY" secondAttribute="bottom" constant="8" id="imU-jR-Yl8"/>
                                         <constraint firstItem="fI8-qp-3YR" firstAttribute="top" secondItem="Sy4-cV-POp" secondAttribute="bottom" constant="8" id="s4Y-Wc-RxO"/>
-                                        <constraint firstItem="z2d-Tt-9sZ" firstAttribute="leading" secondItem="fI8-qp-3YR" secondAttribute="trailing" constant="384" id="uIc-ii-PPg"/>
                                         <constraint firstAttribute="bottom" secondItem="erd-i1-egY" secondAttribute="bottom" id="yEL-Oq-No0"/>
                                         <constraint firstItem="erd-i1-egY" firstAttribute="top" secondItem="Sy4-cV-POp" secondAttribute="bottom" constant="8" id="zKv-ra-YyP"/>
                                     </constraints>
@@ -130,10 +107,6 @@
                                             <exclude reference="hV1-Ha-GNL"/>
                                             <exclude reference="yEL-Oq-No0"/>
                                             <exclude reference="zKv-ra-YyP"/>
-                                            <exclude reference="Mtt-tu-bQe"/>
-                                            <exclude reference="Qcb-2a-M3H"/>
-                                            <exclude reference="S5x-d2-CUf"/>
-                                            <exclude reference="uIc-ii-PPg"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -141,7 +114,7 @@
                                 <connections>
                                     <outlet property="interestLevelView" destination="erd-i1-egY" id="W7V-mm-RZs"/>
                                     <outlet property="numberOfAnswersButton" destination="fI8-qp-3YR" id="MuD-ee-3UN"/>
-                                    <outlet property="profilePicView" destination="z2d-Tt-9sZ" id="vts-Pq-lKN"/>
+                                    <outlet property="profilePicView" destination="BaL-EY-87A" id="kRL-01-XHs"/>
                                     <outlet property="questionTextLabel" destination="Sy4-cV-POp" id="Q7f-Ig-8MN"/>
                                 </connections>
                             </tableViewCell>
@@ -156,12 +129,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1363" y="64"/>
+            <point key="canvasLocation" x="2175" y="64"/>
         </scene>
-        <!--Answers View-->
+        <!--Title-->
         <scene sceneID="SP0-pS-2bC">
             <objects>
-                <tableViewController id="Tkb-Hd-ugk" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AnswersView" id="Tkb-Hd-ugk" customClass="AnswersTVController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mKg-Ts-Gas">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -274,34 +247,34 @@
                             <outlet property="delegate" destination="Tkb-Hd-ugk" id="XF7-Te-8OT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Answers View" id="EaY-po-nGh"/>
+                    <navigationItem key="navigationItem" title="Title" id="P9z-fb-FSW"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGi-4s-k6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2105" y="64"/>
+            <point key="canvasLocation" x="2917" y="64"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="zXE-AR-Swh">
+        <scene sceneID="oDI-A1-g34">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tVa-FO-DYI" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R0K-IS-7I7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="83a-RQ-wg8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="M3r-vG-i2y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="pGg-6v-bdr" kind="relationship" relationship="rootViewController" id="awh-ir-8W6"/>
+                        <segue destination="pGg-6v-bdr" kind="relationship" relationship="rootViewController" id="3ep-5T-uMv"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lu2-5W-p3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qwa-GA-W2o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="605" y="64"/>
+            <point key="canvasLocation" x="1363" y="64"/>
         </scene>
     </scenes>
     <resources>
-        <image name="1" width="756" height="768"/>
         <image name="InterestLevelLow" width="177" height="100"/>
         <image name="Paris" width="500" height="500"/>
+        <image name="Wesley" width="500" height="500"/>
     </resources>
 </document>

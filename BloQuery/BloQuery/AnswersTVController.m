@@ -29,7 +29,7 @@
 //    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewAnswer:)];
 //    self.navigationItem.rightBarButtonItem = addButton;
     
-    self.navigationItem.hidesBackButton = NO;
+//    self.navigationItem.hidesBackButton = NO;
 
 }
 
@@ -95,11 +95,11 @@
         identifier = @"QuestionCellAnswersView";
         self.questionCellAnswersView = [tableView dequeueReusableCellWithIdentifier:identifier];
         
+        [self.questionCellAnswersView setQuestion:self.questionsTVC.question];
+
         if (self.questionCellAnswersView == nil) {
             self.questionCellAnswersView = [[QuestionCellAnswerView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
-        
-        [self.questionCellAnswersView setQuestion:self.questionsTVC.question];
         
         return self.questionCellAnswersView;
 

@@ -10,13 +10,11 @@
 
 @class Question, QuestionsCell;
 
-@protocol QuestionsCellDelegate <NSObject>
-
--(void) cell:(QuestionsCell *)cell didPressAnswersButton:(UIButton *)numberOfAnswersButton;
-
-@end
-
-
+//@protocol QuestionsCellDelegate <NSObject>
+//
+//-(void) cell:(QuestionsCell *)cell didPressAnswersButton:(UIButton *)numberOfAnswersButton;
+//
+//@end
 
 @interface QuestionsCell : UITableViewCell
 
@@ -25,7 +23,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *numberOfAnswersButton;
 @property (weak, nonatomic) IBOutlet UIImageView *interestLevelView;
 
-@property (nonatomic, weak) id <QuestionsCellDelegate> delegate;
+//@property (nonatomic, weak) id <QuestionsCellDelegate> delegate;
 
 + (CGFloat)heightForQuestion:(Question *)question;
 - (void) setQuestion:(Question *)question;

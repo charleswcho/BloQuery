@@ -104,13 +104,29 @@
         cell = [[QuestionsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
+    //-----------------------------------------------------------Setup of the # of answers button in the custom cell
+    
+    cell.numberOfAnswersButton.tag = indexPath.row;
+    [cell.numberOfAnswersButton addTarget:self action:@selector(numberOfAnswersButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
     [cell setQuestion:self.question];  //
     
-    cell.delegate = self;
-
+//    cell.delegate = self;
     
     return cell;
 }
+
+// # of answers button clicked
+
+-(void)numberOfAnswersButtonTapped:(id)sender {
+    
+    UIButton *senderButton = (UIButton *)sender;
+    NSLog(@"current Row=%ld", (long)senderButton.tag);
+    
+    
+}
+
+
 
 // Editing tableView
 
@@ -133,18 +149,15 @@
 
 // --------------------------------------------------------------Need to set up creating a new Question
 // --------------------------------------------------------------Instead of using a Delegate method should I use a IBAction?
-
-- (void)cell:(QuestionsCell *)cell didPressAnswersButton:(UIButton *)numberOfAnswersButton {
-
-    AnswersTVController *answersTVC = [[AnswersTVController alloc] init];
-    
-    UIStoryboardSegue *showAnswers = [UIStoryboardSegue segueWithIdentifier:@"showAnswers"
-                                                                 source:self
-                                                            destination:answersTVC
-                                                         performHandler:nil];
-    [showAnswers perform];
-    
-}
+//
+//- (void)cell:(QuestionsCell *)cell didPressAnswersButton:(UIButton *)numberOfAnswersButton {
+//
+//    AnswersTVController *answersTVC = [[AnswersTVController alloc] init];
+//    
+//    [self.navigationController pushViewController:answersTVC animated:YES];
+//    
+//    
+//}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showAnswers"]) {
