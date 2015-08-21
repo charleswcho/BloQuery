@@ -81,6 +81,9 @@
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <segue destination="Tkb-Hd-ugk" kind="showDetail" identifier="showAnswers" id="Nab-D4-ibg"/>
+                                            </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InterestLevelVeryHigh" translatesAutoresizingMaskIntoConstraints="NO" id="erd-i1-egY">
                                             <rect key="frame" x="118" y="83" width="44" height="25"/>
@@ -137,7 +140,6 @@
                                 <connections>
                                     <outlet property="numberOfAnswersButton" destination="fI8-qp-3YR" id="MuD-ee-3UN"/>
                                     <outlet property="questionTextLabel" destination="Sy4-cV-POp" id="Q7f-Ig-8MN"/>
-                                    <segue destination="636-dO-YgI" kind="showDetail" identifier="showAnswers" id="IuN-rY-568"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -151,7 +153,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="605" y="64"/>
+            <point key="canvasLocation" x="1363" y="64"/>
         </scene>
         <!--Answers View-->
         <scene sceneID="SP0-pS-2bC">
@@ -273,25 +275,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGi-4s-k6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2167" y="64"/>
+            <point key="canvasLocation" x="2105" y="64"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="DAk-sd-M2q">
+        <scene sceneID="zXE-AR-Swh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="636-dO-YgI" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tVa-FO-DYI" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5f1-hw-OlX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="83a-RQ-wg8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Tkb-Hd-ugk" kind="relationship" relationship="rootViewController" id="g0j-KQ-5QX"/>
+                        <segue destination="pGg-6v-bdr" kind="relationship" relationship="rootViewController" id="awh-ir-8W6"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zDD-dZ-8t8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lu2-5W-p3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1355" y="64"/>
+            <point key="canvasLocation" x="605" y="64"/>
         </scene>
     </scenes>
     <resources>
