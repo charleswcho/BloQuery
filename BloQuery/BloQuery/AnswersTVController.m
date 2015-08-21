@@ -14,10 +14,11 @@
 
 @interface AnswersTVController ()
 
-@property (strong, nonatomic) NSMutableArray *questions;
+@property (strong, nonatomic) NSMutableArray *answers;
 @property (strong, nonatomic) QuestionCellAnswerView *questionCellAnswersView;
 @property (strong, nonatomic) AnswerCell *answersCell;
 @property (strong, nonatomic) QuestionsTableViewController *questionsTVC;
+@property (strong, nonatomic) Question *question;
 
 @end
 
@@ -75,6 +76,11 @@
 //    }
 //}
 
+-(void)setQuestion:(Question *)question {
+    self.question = question;
+}
+
+
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -88,7 +94,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
 {
     // Look into register cell bloctagram
-    
     NSString *identifier;
 
     if (indexPath.row == 0) {

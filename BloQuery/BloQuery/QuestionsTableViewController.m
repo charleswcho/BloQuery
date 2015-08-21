@@ -26,6 +26,11 @@
 //    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewQuestion:)];
 //    self.navigationItem.rightBarButtonItem = addButton;
     
+    // Have to reset this back to showing
+    self.navigationItem.hidesBackButton = YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     [query orderByDescending:@"createdAt"];
     
@@ -35,10 +40,7 @@
             self.questions = mutableParseQuestions;  // Set local array to fetched Parse questions
         }
     }];
-    
-    
-    // Have to reset this back to showing
-    self.navigationItem.hidesBackButton = YES;
+
 }
 
 #pragma mark - Parse setup
@@ -124,6 +126,8 @@
     NSLog(@"current Row=%ld", (long)senderButton.tag);
     
     
+    
+    
 }
 
 
@@ -162,10 +166,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showAnswers"]) {
         
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        AnswersTVController *answersTVC = [[AnswersTVController alloc] init];
         
-//        NSDate *object = self.objects[indexPath.row];
-//        [[segue destinationViewController] setDetailItem:object];
+        [answersTVC setQuestion:self.question];
+        
     }
 }
 

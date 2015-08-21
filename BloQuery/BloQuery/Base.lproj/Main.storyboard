@@ -20,6 +20,19 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UaC-CY-51z" id="rtm-EN-dRA">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy4-cV-POp" customClass="QuestionsTextLabel">
+                                            <rect key="frame" x="8" y="8" width="526" height="67"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fI8-qp-3YR">
                                             <rect key="frame" x="8" y="83" width="100" height="25"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -56,11 +69,11 @@
                                                 </mask>
                                             </variation>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wesley" translatesAutoresizingMaskIntoConstraints="NO" id="BaL-EY-87A">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wesley" translatesAutoresizingMaskIntoConstraints="NO" id="ymw-KE-2ST">
                                             <rect key="frame" x="542" y="8" width="50" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="Bet-wD-FKk"/>
-                                                <constraint firstAttribute="width" constant="50" id="HvW-fQ-dL0"/>
+                                                <constraint firstAttribute="width" constant="50" id="3yk-mc-cwR"/>
+                                                <constraint firstAttribute="height" constant="50" id="IKI-gN-pKV"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -69,19 +82,6 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy4-cV-POp" customClass="QuestionsTextLabel">
-                                            <rect key="frame" x="8" y="8" width="526" height="67"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="3"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -89,15 +89,15 @@
                                         <constraint firstItem="Sy4-cV-POp" firstAttribute="top" secondItem="rtm-EN-dRA" secondAttribute="top" constant="8" id="4Zo-rc-x24"/>
                                         <constraint firstItem="fI8-qp-3YR" firstAttribute="leading" secondItem="rtm-EN-dRA" secondAttribute="leading" constant="8" id="Cmd-bL-gcK"/>
                                         <constraint firstItem="erd-i1-egY" firstAttribute="top" secondItem="Sy4-cV-POp" secondAttribute="bottom" constant="8" id="DKa-I5-kWO"/>
+                                        <constraint firstItem="ymw-KE-2ST" firstAttribute="leading" secondItem="Sy4-cV-POp" secondAttribute="trailing" constant="8" id="F44-SH-mKP"/>
                                         <constraint firstAttribute="trailing" secondItem="Sy4-cV-POp" secondAttribute="trailing" constant="8" id="GNH-N9-vk7"/>
-                                        <constraint firstItem="BaL-EY-87A" firstAttribute="leading" secondItem="Sy4-cV-POp" secondAttribute="trailing" constant="8" id="JnT-Tb-wBO"/>
-                                        <constraint firstAttribute="trailing" secondItem="BaL-EY-87A" secondAttribute="trailing" constant="8" id="QEO-ZT-5hF"/>
-                                        <constraint firstItem="BaL-EY-87A" firstAttribute="top" secondItem="rtm-EN-dRA" secondAttribute="top" constant="8" id="XRz-Si-URX"/>
+                                        <constraint firstAttribute="trailing" secondItem="ymw-KE-2ST" secondAttribute="trailing" constant="8" id="Tlo-Hb-aMW"/>
                                         <constraint firstAttribute="bottom" secondItem="fI8-qp-3YR" secondAttribute="bottom" constant="8" id="bHh-13-Zy8"/>
                                         <constraint firstItem="Sy4-cV-POp" firstAttribute="leading" secondItem="rtm-EN-dRA" secondAttribute="leading" constant="8" id="cLs-IA-Tqg"/>
                                         <constraint firstItem="erd-i1-egY" firstAttribute="leading" secondItem="fI8-qp-3YR" secondAttribute="trailing" constant="8" id="hV1-Ha-GNL"/>
                                         <constraint firstAttribute="bottom" secondItem="erd-i1-egY" secondAttribute="bottom" constant="8" id="imU-jR-Yl8"/>
                                         <constraint firstItem="fI8-qp-3YR" firstAttribute="top" secondItem="Sy4-cV-POp" secondAttribute="bottom" constant="8" id="s4Y-Wc-RxO"/>
+                                        <constraint firstItem="ymw-KE-2ST" firstAttribute="top" secondItem="rtm-EN-dRA" secondAttribute="top" constant="8" id="tLO-Cg-1vY"/>
                                         <constraint firstAttribute="bottom" secondItem="erd-i1-egY" secondAttribute="bottom" id="yEL-Oq-No0"/>
                                         <constraint firstItem="erd-i1-egY" firstAttribute="top" secondItem="Sy4-cV-POp" secondAttribute="bottom" constant="8" id="zKv-ra-YyP"/>
                                     </constraints>
@@ -114,7 +114,6 @@
                                 <connections>
                                     <outlet property="interestLevelView" destination="erd-i1-egY" id="W7V-mm-RZs"/>
                                     <outlet property="numberOfAnswersButton" destination="fI8-qp-3YR" id="MuD-ee-3UN"/>
-                                    <outlet property="profilePicView" destination="BaL-EY-87A" id="kRL-01-XHs"/>
                                     <outlet property="questionTextLabel" destination="Sy4-cV-POp" id="Q7f-Ig-8MN"/>
                                 </connections>
                             </tableViewCell>
