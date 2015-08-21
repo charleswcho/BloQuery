@@ -136,11 +136,11 @@
 
 - (void)cell:(QuestionsCell *)cell didPressAnswersButton:(UIButton *)numberOfAnswersButton {
 
-    QuestionsTableViewController *QuestionTVC = [[QuestionsTableViewController alloc] init];
+    AnswersTVController *answersTVC = [[AnswersTVController alloc] init];
     
     UIStoryboardSegue *showAnswers = [UIStoryboardSegue segueWithIdentifier:@"showAnswers"
                                                                  source:self
-                                                            destination:QuestionTVC
+                                                            destination:answersTVC
                                                          performHandler:nil];
     [showAnswers perform];
     

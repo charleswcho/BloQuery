@@ -9,21 +9,25 @@
 #import "AnswersTVController.h"
 #import "Question.h"
 #import "QuestionCellAnswerView.h"
+#import "AnswerCell.h"
+#import "QuestionsTableViewController.h"
 
 @interface AnswersTVController ()
 
-@property (strong, nonatomic) Question *question;
 @property (strong, nonatomic) NSMutableArray *questions;
+@property (strong, nonatomic) QuestionCellAnswerView *questionCellAnswersView;
+@property (strong, nonatomic) AnswerCell *answersCell;
+@property (strong, nonatomic) QuestionsTableViewController *questionsTVC;
 
 @end
 
 @implementation AnswersTVController
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewAnswer:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewAnswer:)];
+//    self.navigationItem.rightBarButtonItem = addButton;
     
     self.navigationItem.hidesBackButton = NO;
 
@@ -63,13 +67,13 @@
 }
 
 
-- (void)insertNewAnswer:(id)sender {
-    if (self.question != nil) {
-        [self.questions insertObject:self.question atIndex:0];
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    }
-}
+//- (void)insertNewAnswer:(id)sender {
+//    if (self.question != nil) {
+//        [self.questions insertObject:self.question atIndex:0];
+//        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//    }
+//}
 
 #pragma mark - Table View
 
@@ -89,17 +93,28 @@
 
     if (indexPath.row == 0) {
         identifier = @"QuestionCellAnswersView";
+        self.questionCellAnswersView = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (self.questionCellAnswersView == nil) {
+            self.questionCellAnswersView = [[QuestionCellAnswerView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        
+        [self.questionCellAnswersView setQuestion:self.questionsTVC.question];
+        
+        return self.questionCellAnswersView;
+
     } else {
         identifier = @"AnswerCell";
-    }
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        self.answersCell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (self.answersCell == nil) {
+            self.answersCell = [[AnswerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        
+        return self.answersCell;
 
-    if (cell == nil) {
-        cell = [[QuestionsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    return cell;
 }
 
 // Editing tableView

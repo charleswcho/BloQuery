@@ -12,4 +12,6 @@
 
 @interface AnswersTVController : PFQueryTableViewController
 
+@property (nonatomic, strong) Question *question;
+
 @end

@@ -15,5 +15,6 @@
 @property (nonatomic, strong) Question *question;
 
 + (CGFloat)heightForQuestion:(Question *)question;
+- (void) setQuestion:(Question *)question;
 
 @end

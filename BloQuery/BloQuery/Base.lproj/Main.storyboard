@@ -47,6 +47,7 @@
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="z2d-Tt-9sZ">
                                             <rect key="frame" x="542" y="8" width="50" height="50"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="Cco-RB-WnH"/>
                                                 <constraint firstAttribute="height" constant="50" id="bNi-sp-uHY"/>
@@ -82,10 +83,10 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <segue destination="Tkb-Hd-ugk" kind="showDetail" identifier="showAnswers" id="Nab-D4-ibg"/>
+                                                <segue destination="Tkb-Hd-ugk" kind="show" identifier="showAnswers" id="Nab-D4-ibg"/>
                                             </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InterestLevelVeryHigh" translatesAutoresizingMaskIntoConstraints="NO" id="erd-i1-egY">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InterestLevelLow" translatesAutoresizingMaskIntoConstraints="NO" id="erd-i1-egY">
                                             <rect key="frame" x="118" y="83" width="44" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="44" id="LNG-e7-268"/>
@@ -138,7 +139,9 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="interestLevelView" destination="erd-i1-egY" id="W7V-mm-RZs"/>
                                     <outlet property="numberOfAnswersButton" destination="fI8-qp-3YR" id="MuD-ee-3UN"/>
+                                    <outlet property="profilePicView" destination="z2d-Tt-9sZ" id="vts-Pq-lKN"/>
                                     <outlet property="questionTextLabel" destination="Sy4-cV-POp" id="Q7f-Ig-8MN"/>
                                 </connections>
                             </tableViewCell>
@@ -170,7 +173,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="blI-4H-cSN" id="JsY-H9-H91">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Nm-J4-5l9">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Paris" translatesAutoresizingMaskIntoConstraints="NO" id="9Nm-J4-5l9">
                                             <rect key="frame" x="492" y="0.0" width="100" height="100"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="XBe-CK-qcM"/>
@@ -179,7 +182,7 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aw5-Vf-LvK">
                                             <rect key="frame" x="8" y="8" width="476" height="84"/>
-                                            <color key="backgroundColor" red="0.01176470588" green="0.68627450980000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.01176470588" green="0.68627450980000004" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -230,7 +233,7 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Answer" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aky-1K-eBh">
                                             <rect key="frame" x="8" y="8" width="476" height="84"/>
-                                            <color key="backgroundColor" red="0.01176470588" green="0.68627450980000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.01176470588" green="0.68627450980000004" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -298,6 +301,7 @@
     </scenes>
     <resources>
         <image name="1" width="756" height="768"/>
-        <image name="InterestLevelVeryHigh" width="177" height="100"/>
+        <image name="InterestLevelLow" width="177" height="100"/>
+        <image name="Paris" width="500" height="500"/>
     </resources>
 </document>

@@ -28,8 +28,6 @@
 		BA8AC15A1B7EA549000D6A15 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8AC1591B7EA549000D6A15 /* Accounts.framework */; };
 		BA8AC15C1B7EA550000D6A15 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8AC15B1B7EA550000D6A15 /* Social.framework */; };
 		BA8AC15F1B7EA626000D6A15 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC15E1B7EA626000D6A15 /* LogInViewController.m */; };
-		BA8AC1701B7EBDC3000D6A15 /* logInViewControllerConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC16D1B7EBDC3000D6A15 /* logInViewControllerConfigure.m */; };
-		BA8AC1711B7EBDC3000D6A15 /* signUpViewControllerConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC16F1B7EBDC3000D6A15 /* signUpViewControllerConfigure.m */; };
 		BA8AC17E1B7EC566000D6A15 /* QuestionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC17D1B7EC566000D6A15 /* QuestionsCell.m */; };
 		BA8AC1841B8109C9000D6A15 /* QuestionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC1831B8109C9000D6A15 /* QuestionsTableViewController.m */; };
 		BA8AC1921B814385000D6A15 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC1911B814385000D6A15 /* User.m */; };
@@ -44,9 +42,10 @@
 		BABD8F6C1B852CCC00F1F519 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABD8F6A1B852CCC00F1F519 /* ParseFacebookUtilsV4.framework */; };
 		BABD8F6E1B852CEC00F1F519 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABD8F6D1B852CEC00F1F519 /* ParseUI.framework */; };
 		BABD8F701B852D0600F1F519 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABD8F6F1B852D0600F1F519 /* ParseTwitterUtils.framework */; };
-		BABD8F721B852D7E00F1F519 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABD8F711B852D7E00F1F519 /* Parse.framework */; };
 		BABD8F751B866A6D00F1F519 /* QuestionsTextLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD8F741B866A6D00F1F519 /* QuestionsTextLabel.m */; };
-		BABD8F771B86ABA300F1F519 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BABD8F761B86ABA300F1F519 /* Images.xcassets */; };
+		BAEC70A51B87946100BE1DFA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEC70A41B87946100BE1DFA /* Images.xcassets */; };
+		BAEC70AA1B879A5900BE1DFA /* signUpViewControllerConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEC70A91B879A5900BE1DFA /* signUpViewControllerConfigure.m */; };
+		BAEC70AD1B879A7200BE1DFA /* logInViewControllerConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEC70AC1B879A7200BE1DFA /* logInViewControllerConfigure.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,10 +91,6 @@
 		BA8AC15B1B7EA550000D6A15 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		BA8AC15D1B7EA626000D6A15 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		BA8AC15E1B7EA626000D6A15 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
-		BA8AC16C1B7EBDC3000D6A15 /* logInViewControllerConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = logInViewControllerConfigure.h; path = ../../../BlocQuery/BlocQuery/BlocQuery/logInViewControllerConfigure.h; sourceTree = "<group>"; };
-		BA8AC16D1B7EBDC3000D6A15 /* logInViewControllerConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = logInViewControllerConfigure.m; path = ../../../BlocQuery/BlocQuery/BlocQuery/logInViewControllerConfigure.m; sourceTree = "<group>"; };
-		BA8AC16E1B7EBDC3000D6A15 /* signUpViewControllerConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = signUpViewControllerConfigure.h; path = ../../../BlocQuery/BlocQuery/BlocQuery/signUpViewControllerConfigure.h; sourceTree = "<group>"; };
-		BA8AC16F1B7EBDC3000D6A15 /* signUpViewControllerConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = signUpViewControllerConfigure.m; path = ../../../BlocQuery/BlocQuery/BlocQuery/signUpViewControllerConfigure.m; sourceTree = "<group>"; };
 		BA8AC17C1B7EC566000D6A15 /* QuestionsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsCell.h; sourceTree = "<group>"; };
 		BA8AC17D1B7EC566000D6A15 /* QuestionsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsCell.m; sourceTree = "<group>"; };
 		BA8AC1821B8109C9000D6A15 /* QuestionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsTableViewController.h; sourceTree = "<group>"; };
@@ -113,10 +108,13 @@
 		BABD8F6A1B852CCC00F1F519 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		BABD8F6D1B852CEC00F1F519 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		BABD8F6F1B852D0600F1F519 /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
-		BABD8F711B852D7E00F1F519 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Downloads/parse-library-1.8.1/Parse.framework"; sourceTree = "<group>"; };
 		BABD8F731B866A6D00F1F519 /* QuestionsTextLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsTextLabel.h; sourceTree = "<group>"; };
 		BABD8F741B866A6D00F1F519 /* QuestionsTextLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsTextLabel.m; sourceTree = "<group>"; };
-		BABD8F761B86ABA300F1F519 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../../.Trash/Images.xcassets; sourceTree = "<group>"; };
+		BAEC70A41B87946100BE1DFA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BAEC70A81B879A5900BE1DFA /* signUpViewControllerConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = signUpViewControllerConfigure.h; sourceTree = "<group>"; };
+		BAEC70A91B879A5900BE1DFA /* signUpViewControllerConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = signUpViewControllerConfigure.m; sourceTree = "<group>"; };
+		BAEC70AB1B879A7200BE1DFA /* logInViewControllerConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logInViewControllerConfigure.h; sourceTree = "<group>"; };
+		BAEC70AC1B879A7200BE1DFA /* logInViewControllerConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = logInViewControllerConfigure.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +149,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BABD8F721B852D7E00F1F519 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +253,7 @@
 			children = (
 				BA8AC1231B7EA3FC000D6A15 /* Main.storyboard */,
 				BA8AC1281B7EA3FC000D6A15 /* LaunchScreen.xib */,
-				BABD8F761B86ABA300F1F519 /* Images.xcassets */,
+				BAEC70A41B87946100BE1DFA /* Images.xcassets */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -264,7 +261,6 @@
 		BA8AC1421B7EA4B6000D6A15 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BABD8F711B852D7E00F1F519 /* Parse.framework */,
 				BABD8F6F1B852D0600F1F519 /* ParseTwitterUtils.framework */,
 				BABD8F651B852C8E00F1F519 /* Parse.framework */,
 				BA8AC15B1B7EA550000D6A15 /* Social.framework */,
@@ -293,10 +289,10 @@
 		BA8AC1721B7EBEE1000D6A15 /* Login Configure */ = {
 			isa = PBXGroup;
 			children = (
-				BA8AC16C1B7EBDC3000D6A15 /* logInViewControllerConfigure.h */,
-				BA8AC16D1B7EBDC3000D6A15 /* logInViewControllerConfigure.m */,
-				BA8AC16E1B7EBDC3000D6A15 /* signUpViewControllerConfigure.h */,
-				BA8AC16F1B7EBDC3000D6A15 /* signUpViewControllerConfigure.m */,
+				BAEC70AB1B879A7200BE1DFA /* logInViewControllerConfigure.h */,
+				BAEC70AC1B879A7200BE1DFA /* logInViewControllerConfigure.m */,
+				BAEC70A81B879A5900BE1DFA /* signUpViewControllerConfigure.h */,
+				BAEC70A91B879A5900BE1DFA /* signUpViewControllerConfigure.m */,
 			);
 			name = "Login Configure";
 			sourceTree = "<group>";
@@ -414,7 +410,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BABD8F771B86ABA300F1F519 /* Images.xcassets in Resources */,
+				BAEC70A51B87946100BE1DFA /* Images.xcassets in Resources */,
 				BA8AC1251B7EA3FC000D6A15 /* Main.storyboard in Resources */,
 				BA8AC12A1B7EA3FC000D6A15 /* LaunchScreen.xib in Resources */,
 			);
@@ -439,11 +435,11 @@
 				BA55ADAD1B82917F00985717 /* QuestionCellAnswerView.m in Sources */,
 				BA55ADB11B8291B200985717 /* AnswerCell.m in Sources */,
 				BA8AC17E1B7EC566000D6A15 /* QuestionsCell.m in Sources */,
+				BAEC70AA1B879A5900BE1DFA /* signUpViewControllerConfigure.m in Sources */,
+				BAEC70AD1B879A7200BE1DFA /* logInViewControllerConfigure.m in Sources */,
 				BABD8F751B866A6D00F1F519 /* QuestionsTextLabel.m in Sources */,
-				BA8AC1711B7EBDC3000D6A15 /* signUpViewControllerConfigure.m in Sources */,
 				BA8AC15F1B7EA626000D6A15 /* LogInViewController.m in Sources */,
 				BA8AC1841B8109C9000D6A15 /* QuestionsTableViewController.m in Sources */,
-				BA8AC1701B7EBDC3000D6A15 /* logInViewControllerConfigure.m in Sources */,
 				BA1F29A91B8166AB00219F95 /* Question.m in Sources */,
 				BA8AC1191B7EA3FC000D6A15 /* main.m in Sources */,
 				BA55ADAA1B828A2700985717 /* AnswersTVController.m in Sources */,
