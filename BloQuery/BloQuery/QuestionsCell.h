@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <IPInsetLabel.h>
 
 @class Question, QuestionsCell;
 
@@ -19,7 +20,7 @@
 @interface QuestionsCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicView;
-@property (weak, nonatomic) IBOutlet UILabel *questionTextLabel;
+@property (weak, nonatomic) IBOutlet IPInsetLabel *questionTextLabel;
 @property (strong, nonatomic) IBOutlet UIButton *numberOfAnswersButton;
 @property (weak, nonatomic) IBOutlet UIImageView *interestLevelView;
 

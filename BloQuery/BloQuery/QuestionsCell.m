@@ -38,7 +38,10 @@
     [self.numberOfAnswersButton.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [self.numberOfAnswersButton.layer setBorderWidth:1];
     
-
+    // Add insets to the questions' text boxes
+    self.questionTextLabel.insets = UIEdgeInsetsMake(5, 15, 10, 10);
+    self.questionTextLabel.verticalTextAlignment = UIControlContentVerticalAlignmentTop;
+    
     
 }
 

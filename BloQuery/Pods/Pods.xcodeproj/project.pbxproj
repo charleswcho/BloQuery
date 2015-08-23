@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DAFF889735473D0B7E310286A718D1B /* IPInsetLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6DFCEAB5105C4EEB9230E484048491 /* IPInsetLabel-dummy.m */; };
+		629797793DEBE18FBF0D741321FF8A0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1409BE1469EB4617B75186BB8D6C33 /* Foundation.framework */; };
+		BD8843B8C020C7A1E48106BB92EF11A7 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7149E2906F24545ECB0AE323C35C8590 /* Pods-dummy.m */; };
+		BDD65E395CB4D95641C12B5BE8303B9E /* IPInsetLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = C9EFD4BD5C14A3F605F8285C47BB3C6B /* IPInsetLabel.h */; };
+		CA9D6BE2E8DF75DA86EB331F5F27D9AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1409BE1469EB4617B75186BB8D6C33 /* Foundation.framework */; };
+		D5EF4C81471A9CBBB7098296E0157EB1 /* IPInsetLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A12FE0520BB049384E37DB7D2E70BF6 /* IPInsetLabel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A80909A218C8CEE27B7EC5EC1EA5916 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC399CBE1C7C9FFBD9ED3E76696987A2;
+			remoteInfo = "IPInsetLabel-IPInsetLabel";
+		};
+		8283A9B2DE145A0E0CF70949D955778D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBCD08A7747F2D4AA7C1E160233B4741;
+			remoteInfo = IPInsetLabel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		15A529C27057E4A57D259CBC6E6CE49C /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1963BE26291B110D9B02DE624C9E8B2C /* IPInsetLabel-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "IPInsetLabel-Private.xcconfig"; sourceTree = "<group>"; };
+		2994959C6A8EDB60E8874988665209D8 /* IPInsetLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IPInsetLabel.xcconfig; sourceTree = "<group>"; };
+		2C713F106AC04198BF4AB6F9DC955619 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		327D4E21B33F892AD33980E39CD19C07 /* IPInsetLabel.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPInsetLabel.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		32CB5BE533B5833FA84972265C4FCF28 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		36A647C1B6A6E9250651BC976ABAC1D0 /* IPInsetLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IPInsetLabel-prefix.pch"; sourceTree = "<group>"; };
+		4A12FE0520BB049384E37DB7D2E70BF6 /* IPInsetLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IPInsetLabel.m; path = Pod/Classes/IPInsetLabel.m; sourceTree = "<group>"; };
+		641AE05DD55E5E6AC1590CD7B4A18F97 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		7149E2906F24545ECB0AE323C35C8590 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BF59BC15D23E1E1912C8F334E7236813 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		C9EFD4BD5C14A3F605F8285C47BB3C6B /* IPInsetLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IPInsetLabel.h; path = Pod/Classes/IPInsetLabel.h; sourceTree = "<group>"; };
+		D2C0F215C9110E8A20A55CC37EE96527 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		DA1409BE1469EB4617B75186BB8D6C33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DA3BA362DD03B27B8706A44A04B54900 /* libIPInsetLabel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIPInsetLabel.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF6DFCEAB5105C4EEB9230E484048491 /* IPInsetLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IPInsetLabel-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F6E17816F8484C693A6378F3A3FF7B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA9D6BE2E8DF75DA86EB331F5F27D9AB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8768963C87AB2B85A16AE43484C5B113 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				629797793DEBE18FBF0D741321FF8A0B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1822DE55D8A9C6CE4CA142D4E271BA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DA1409BE1469EB4617B75186BB8D6C33 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				C82086233299A8135B84C98D6AEF9DA9 /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				D2411A5FE7F7A004607BED49990C37F4 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		91815CAF0A96E9EB3AA505F7CA75892A /* IPInsetLabel */ = {
+			isa = PBXGroup;
+			children = (
+				C9EFD4BD5C14A3F605F8285C47BB3C6B /* IPInsetLabel.h */,
+				4A12FE0520BB049384E37DB7D2E70BF6 /* IPInsetLabel.m */,
+				D0B23BBBD395D2227BC6CBA0E843FFC8 /* Support Files */,
+			);
+			path = IPInsetLabel;
+			sourceTree = "<group>";
+		};
+		952EEBFAF8F7E620423C9F156F25A506 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15A529C27057E4A57D259CBC6E6CE49C /* Pods-acknowledgements.markdown */,
+				BF59BC15D23E1E1912C8F334E7236813 /* Pods-acknowledgements.plist */,
+				7149E2906F24545ECB0AE323C35C8590 /* Pods-dummy.m */,
+				641AE05DD55E5E6AC1590CD7B4A18F97 /* Pods-resources.sh */,
+				2C713F106AC04198BF4AB6F9DC955619 /* Pods.debug.xcconfig */,
+				D2C0F215C9110E8A20A55CC37EE96527 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C82086233299A8135B84C98D6AEF9DA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91815CAF0A96E9EB3AA505F7CA75892A /* IPInsetLabel */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				327D4E21B33F892AD33980E39CD19C07 /* IPInsetLabel.bundle */,
+				DA3BA362DD03B27B8706A44A04B54900 /* libIPInsetLabel.a */,
+				32CB5BE533B5833FA84972265C4FCF28 /* libPods.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0B23BBBD395D2227BC6CBA0E843FFC8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2994959C6A8EDB60E8874988665209D8 /* IPInsetLabel.xcconfig */,
+				1963BE26291B110D9B02DE624C9E8B2C /* IPInsetLabel-Private.xcconfig */,
+				FF6DFCEAB5105C4EEB9230E484048491 /* IPInsetLabel-dummy.m */,
+				36A647C1B6A6E9250651BC976ABAC1D0 /* IPInsetLabel-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/IPInsetLabel";
+			sourceTree = "<group>";
+		};
+		D2411A5FE7F7A004607BED49990C37F4 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				952EEBFAF8F7E620423C9F156F25A506 /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F5DD4666CD29072610664E962BBB7452 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDD65E395CB4D95641C12B5BE8303B9E /* IPInsetLabel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9D365DE021417290BA166E69BEF2ADA1 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 834D5C12445ADAD143FC030F45A2462A /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				EAFE0149B21F8CE3D51B1E86D92F5037 /* Sources */,
+				5F6E17816F8484C693A6378F3A3FF7B2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F42F00E6D54467E27E14ACBF2D2CB86 /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = 32CB5BE533B5833FA84972265C4FCF28 /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CC399CBE1C7C9FFBD9ED3E76696987A2 /* IPInsetLabel-IPInsetLabel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3752E6443E84F170EDC73DC5C9BA153 /* Build configuration list for PBXNativeTarget "IPInsetLabel-IPInsetLabel" */;
+			buildPhases = (
+				228CA6BFB87BBF329EADB956E471C428 /* Sources */,
+				A1822DE55D8A9C6CE4CA142D4E271BA1 /* Frameworks */,
+				3F3E75CD376FE763A64B2690F9BBDDA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IPInsetLabel-IPInsetLabel";
+			productName = "IPInsetLabel-IPInsetLabel";
+			productReference = 327D4E21B33F892AD33980E39CD19C07 /* IPInsetLabel.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		DBCD08A7747F2D4AA7C1E160233B4741 /* IPInsetLabel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8217F516BFD9EF2BEC3CBC72E1A6AA2C /* Build configuration list for PBXNativeTarget "IPInsetLabel" */;
+			buildPhases = (
+				7A576B8186563C5F6C631F076BEB79A7 /* Sources */,
+				8768963C87AB2B85A16AE43484C5B113 /* Frameworks */,
+				F5DD4666CD29072610664E962BBB7452 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE36BB257536B24EC0F4D2F1C006449E /* PBXTargetDependency */,
+			);
+			name = IPInsetLabel;
+			productName = IPInsetLabel;
+			productReference = DA3BA362DD03B27B8706A44A04B54900 /* libIPInsetLabel.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DBCD08A7747F2D4AA7C1E160233B4741 /* IPInsetLabel */,
+				CC399CBE1C7C9FFBD9ED3E76696987A2 /* IPInsetLabel-IPInsetLabel */,
+				9D365DE021417290BA166E69BEF2ADA1 /* Pods */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F3E75CD376FE763A64B2690F9BBDDA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		228CA6BFB87BBF329EADB956E471C428 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A576B8186563C5F6C631F076BEB79A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DAFF889735473D0B7E310286A718D1B /* IPInsetLabel-dummy.m in Sources */,
+				D5EF4C81471A9CBBB7098296E0157EB1 /* IPInsetLabel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAFE0149B21F8CE3D51B1E86D92F5037 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD8843B8C020C7A1E48106BB92EF11A7 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4F42F00E6D54467E27E14ACBF2D2CB86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IPInsetLabel;
+			target = DBCD08A7747F2D4AA7C1E160233B4741 /* IPInsetLabel */;
+			targetProxy = 8283A9B2DE145A0E0CF70949D955778D /* PBXContainerItemProxy */;
+		};
+		AE36BB257536B24EC0F4D2F1C006449E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "IPInsetLabel-IPInsetLabel";
+			target = CC399CBE1C7C9FFBD9ED3E76696987A2 /* IPInsetLabel-IPInsetLabel */;
+			targetProxy = 1A80909A218C8CEE27B7EC5EC1EA5916 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		38E2CD7558B17D476BFFD23F872C2BDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1963BE26291B110D9B02DE624C9E8B2C /* IPInsetLabel-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/IPInsetLabel/IPInsetLabel-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3A2B86D7E5112D41F98FF6AF808DA228 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1963BE26291B110D9B02DE624C9E8B2C /* IPInsetLabel-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = IPInsetLabel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		511103F7F15A7E8F83B268EA03462CAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA05AF9C3A14EE0E32F42C6E6D42D34F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C29F6E3982CCC8699E64C76DA0884770 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C713F106AC04198BF4AB6F9DC955619 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CCAE45155F6F4E222B8BB6CE534DFAB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1963BE26291B110D9B02DE624C9E8B2C /* IPInsetLabel-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/IPInsetLabel/IPInsetLabel-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CF650DDB3DD012A610D7627AAC25AB85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1963BE26291B110D9B02DE624C9E8B2C /* IPInsetLabel-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = IPInsetLabel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		FB89DEB4BBA73EE1CC5B852727314692 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2C0F215C9110E8A20A55CC37EE96527 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA05AF9C3A14EE0E32F42C6E6D42D34F /* Debug */,
+				511103F7F15A7E8F83B268EA03462CAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8217F516BFD9EF2BEC3CBC72E1A6AA2C /* Build configuration list for PBXNativeTarget "IPInsetLabel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38E2CD7558B17D476BFFD23F872C2BDE /* Debug */,
+				CCAE45155F6F4E222B8BB6CE534DFAB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		834D5C12445ADAD143FC030F45A2462A /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C29F6E3982CCC8699E64C76DA0884770 /* Debug */,
+				FB89DEB4BBA73EE1CC5B852727314692 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3752E6443E84F170EDC73DC5C9BA153 /* Build configuration list for PBXNativeTarget "IPInsetLabel-IPInsetLabel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF650DDB3DD012A610D7627AAC25AB85 /* Debug */,
+				3A2B86D7E5112D41F98FF6AF808DA228 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
