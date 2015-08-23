@@ -37,6 +37,7 @@
     
     [self.numberOfAnswersButton.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [self.numberOfAnswersButton.layer setBorderWidth:1];
+    
 
     
 }
