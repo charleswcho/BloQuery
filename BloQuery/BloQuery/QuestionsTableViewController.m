@@ -58,13 +58,20 @@
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
     [query orderByDescending:@"createdAt"];
+//    [query orderByDescending:@"numberOf"];  // How to sort by number of Answers?
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch an array of Questions from the Question class
         if (!error) {
-            NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
-            self.questions = mutableParseQuestions;  // Set local array to fetched Parse questions
+//            NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
+//            self.questions = mutableParseQuestions;  // Set local array to fetched Parse questions
+            
+            [Question saveAllInBackground:parseQuestions];
+        } else {
+            NSLog(@"error, %@", error);
         }
     }];
+    
+    
 
     return query;
 }
@@ -75,8 +82,9 @@
     
     self.question = newQuestion;  // Store the new question to the local variable
     
-    [self.question setObject:[User currentUser] forKey:@"author"];  // Save the curret user as the author
+    // TODO ---------------------------------------------Need to save the questionText from the new view controller
     
+    [self.question setObject:[User currentUser] forKey:@"author"];  // Save the curret user as the author
     
     //------------------------------------------------------------------------------Should I update the local array or refetch then reload the tableView?
 //    if (self.question != nil) {  // Insert new question into the local array 
@@ -95,12 +103,24 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.questions.count;
+    return self.objects.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    self.question = [self.questions objectAtIndex:indexPath.row]; // Save one question from row
+    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    [query fromLocalDatastore];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch an array of Questions from the Question class
+        if (!error) {
+            
+            self.question = [parseQuestions objectAtIndex:indexPath.row]; // Save one question from row
+            
+        } else {
+            NSLog(@"error, %@", error);
+        }
+    }];
+
+//    self.question = [self.questions objectAtIndex:indexPath.row]; // Save one question from row
 
     static NSString *identifier = @"QuestionsCell";
     
@@ -124,16 +144,6 @@
 
 //------------------------------------------------------------------------------------------------------------------------Need to check if this is right
 
-
-// # of answers button clicked
-
--(void)numberOfAnswersButtonTapped:(id)sender {
-    
-    UIButton *senderButton = (UIButton *)sender;
-    NSLog(@"current Row=%ld", (long)senderButton.tag);
-    
-}
-
 // Editing tableView
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -153,7 +163,16 @@
 
 #pragma mark - Segues
 
-// --------------------------------------------------------------Need to set up creating a new Question
+// # of answers button clicked
+
+-(void)numberOfAnswersButtonTapped:(id)sender {
+    
+    AnswersTVController *answersTVC = [[AnswersTVController alloc] init];
+    
+   [self.navigationController pushViewController:answersTVC animated:YES];
+    
+}
+
 // --------------------------------------------------------------Instead of using a Delegate method should I use a IBAction?
 //
 //- (void)cell:(QuestionsCell *)cell didPressAnswersButton:(UIButton *)numberOfAnswersButton {
@@ -165,15 +184,11 @@
 //    
 //}
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showAnswers"]) {
-        
-        AnswersTVController *answersTVC = [[AnswersTVController alloc] init];
-        
-        [answersTVC setQuestion:self.question];
-        
-    }
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if ([[segue identifier] isEqualToString:@"showAnswers"]) {
+//        
+//    }
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -10,4 +10,12 @@
 
 @implementation Answer
 
+@synthesize user;
+@synthesize answerText;
+@synthesize numberOfVotes;
+
++(NSString *)parseClassName {
+    return @"Answer";
+}
+
 @end

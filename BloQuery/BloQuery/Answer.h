@@ -10,7 +10,7 @@
 
 @class User;
 
-@interface Answer : PFObject
+@interface Answer : PFObject <PFSubclassing>
 
 +(NSString *)parseClassName;
 

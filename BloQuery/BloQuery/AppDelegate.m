@@ -35,10 +35,15 @@
     // https://parse.com/docs/ios_guide#localdatastore/iOS
     [Parse enableLocalDatastore];
     
-    // Initialize Parse.
+    #pragma mark Initialize Parse.
+    
+    // Register subclasses
     [User registerSubclass];
     [Question registerSubclass];
     [Answer registerSubclass];
+    
+    [Parse enableLocalDatastore];
+    
     [Parse setApplicationId:@"Fur1pXrZLPNW7kyavY7otL1SLaBqj0SmauqJ1itw"
                   clientKey:@"rkdFBeT93ehQehZ6eVGNEUn8x2PhNgIrrqhe1RCp"];
     

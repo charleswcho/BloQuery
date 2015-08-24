@@ -67,7 +67,7 @@
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
-    [query whereKey:@"Question" equalTo:self.questionsTVC.question];
+    [query whereKey:@"Answer" equalTo:self.questionsTVC.question];
     
     [query orderByDescending:@"createdAt"];
 

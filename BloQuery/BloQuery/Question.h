@@ -15,8 +15,9 @@
 
 @property (retain, nonatomic) User *user;
 @property (retain, nonatomic) Answer *answer;
-//@property (retain, nonatomic) NSMutableArray *answersToQuestion;
-@property (retain, nonatomic) NSNumber *numberOfAnswers;
+
+//@property (retain, nonatomic) NSMutableArray *answersToQuestion;  // We're not using arrays to store
+//@property (retain, nonatomic) NSNumber *numberOfAnswers;
 
 @property (retain, nonatomic) NSString *questionText;
 

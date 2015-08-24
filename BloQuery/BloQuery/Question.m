@@ -11,6 +11,7 @@
 @implementation Question
 
 @dynamic user;
+@dynamic answer;
 @dynamic questionText;
 //@dynamic answersToQuestion;  // In progress
 
