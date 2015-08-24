@@ -124,7 +124,14 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Questions View" id="tQt-TN-PWz"/>
+                    <navigationItem key="navigationItem" title="Questions View" id="tQt-TN-PWz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="iBk-EJ-lFz">
+                            <color key="tintColor" red="0.33529066289999998" green="0.79330636409999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="createNewQuestion:" destination="pGg-6v-bdr" id="FkT-9W-owx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
@@ -237,6 +244,8 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="answerProfilePic" destination="25T-h6-6fh" id="hts-0M-F5k"/>
+                                    <outlet property="answerText" destination="aky-1K-eBh" id="esU-Iy-U0Z"/>
                                     <outlet property="profilePicView" destination="25T-h6-6fh" id="9ZM-tH-jTY"/>
                                 </connections>
                             </tableViewCell>
@@ -246,11 +255,114 @@
                             <outlet property="delegate" destination="Tkb-Hd-ugk" id="XF7-Te-8OT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="P9z-fb-FSW"/>
+                    <navigationItem key="navigationItem" title="Title" id="P9z-fb-FSW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="m67-Ji-Zhu">
+                            <color key="tintColor" red="0.33529066289999998" green="0.79330636409999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="createNewAnswer:" destination="Tkb-Hd-ugk" id="ZoK-sB-8ot"/>
+                                <segue destination="ANc-jC-FQ3" kind="show" id="5uQ-im-x4R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGi-4s-k6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2917" y="64"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="a0M-Ee-UGv">
+            <objects>
+                <tableViewController id="ANc-jC-FQ3" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Z5P-BH-SsU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionCellAnswerView" rowHeight="100" id="eLO-07-4zM" customClass="QuestionCellAnswerView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eLO-07-4zM" id="Eag-JX-2HB">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Paris" translatesAutoresizingMaskIntoConstraints="NO" id="0K8-tG-o0D">
+                                            <rect key="frame" x="492" y="0.0" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="Ln9-eb-0re"/>
+                                                <constraint firstAttribute="width" constant="100" id="WZx-Oc-gh9"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smo-Q1-ghy">
+                                            <rect key="frame" x="8" y="8" width="476" height="84"/>
+                                            <color key="backgroundColor" red="0.01176470588" green="0.68627450980000004" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Smo-Q1-ghy" firstAttribute="top" secondItem="Eag-JX-2HB" secondAttribute="topMargin" id="1Pc-CS-fgw"/>
+                                        <constraint firstItem="Smo-Q1-ghy" firstAttribute="leading" secondItem="Eag-JX-2HB" secondAttribute="leading" id="2FW-gU-B1H"/>
+                                        <constraint firstItem="Smo-Q1-ghy" firstAttribute="top" secondItem="Eag-JX-2HB" secondAttribute="top" id="AlU-eR-ejG"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Smo-Q1-ghy" secondAttribute="bottom" constant="-0.5" id="Cmv-Kp-qpB"/>
+                                        <constraint firstAttribute="trailing" secondItem="0K8-tG-o0D" secondAttribute="trailing" constant="8" id="F8L-b7-exI"/>
+                                        <constraint firstItem="Smo-Q1-ghy" firstAttribute="leading" secondItem="Eag-JX-2HB" secondAttribute="leadingMargin" id="IA5-qH-7DQ"/>
+                                        <constraint firstItem="0K8-tG-o0D" firstAttribute="top" secondItem="Eag-JX-2HB" secondAttribute="topMargin" constant="-8" id="Kds-9F-OcI"/>
+                                        <constraint firstItem="0K8-tG-o0D" firstAttribute="leading" secondItem="Smo-Q1-ghy" secondAttribute="trailing" constant="8" id="Lqf-wY-RiK"/>
+                                        <constraint firstItem="0K8-tG-o0D" firstAttribute="trailing" secondItem="Eag-JX-2HB" secondAttribute="trailingMargin" id="Nzn-6B-wo8"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="0K8-tG-o0D" secondAttribute="bottom" constant="-8.5" id="X4C-3q-nzA"/>
+                                        <constraint firstItem="0K8-tG-o0D" firstAttribute="leading" secondItem="Smo-Q1-ghy" secondAttribute="trailing" constant="8" id="Z6o-wA-uld"/>
+                                        <constraint firstItem="Smo-Q1-ghy" firstAttribute="top" secondItem="Eag-JX-2HB" secondAttribute="topMargin" constant="-8" id="j5A-hv-q3d"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="j5A-hv-q3d"/>
+                                            <exclude reference="2FW-gU-B1H"/>
+                                            <exclude reference="AlU-eR-ejG"/>
+                                            <exclude reference="Lqf-wY-RiK"/>
+                                            <exclude reference="Nzn-6B-wo8"/>
+                                            <exclude reference="X4C-3q-nzA"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="profilePicView" destination="0K8-tG-o0D" id="tYT-3x-FzE"/>
+                                    <outlet property="questionTextLabel" destination="Smo-Q1-ghy" id="BUp-LK-dU6"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerCellText" rowHeight="200" id="PQq-01-6K6" userLabel="NewAnswerCell" customClass="NewAnswerCell">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PQq-01-6K6" id="xyj-a0-5Y3">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Answer" translatesAutoresizingMaskIntoConstraints="NO" id="Fov-WK-hJD">
+                                            <rect key="frame" x="8" y="8" width="584" height="184"/>
+                                            <color key="backgroundColor" red="0.01176470588" green="0.68627450980000004" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="answerText" destination="Fov-WK-hJD" id="jeX-Wu-4YZ"/>
+                                    <outlet property="newAnswerText" destination="Fov-WK-hJD" id="Ofd-xK-L7v"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ANc-jC-FQ3" id="QKn-HR-twa"/>
+                            <outlet property="delegate" destination="ANc-jC-FQ3" id="fgZ-GA-MdT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="f3M-12-Qli">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Zu2-7y-nxF">
+                            <color key="tintColor" red="0.33529066289999998" green="0.79330636409999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SNy-b0-b0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3659" y="64"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oDI-A1-g34">

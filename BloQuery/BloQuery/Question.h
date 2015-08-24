@@ -6,16 +6,19 @@
 //  Copyright (c) 2015 Charles Wesley Cho. All rights reserved.
 //
 #import <Parse/Parse.h>
-#import "InterestLevelIcon.h"
 
-@class User, Question;
+@class User, Question, Answer;
 
 @interface Question : PFObject <PFSubclassing>
 
 +(NSString *)parseClassName;
 
 @property (retain, nonatomic) User *user;
-@property (retain, nonatomic) NSString *questionText;
+@property (retain, nonatomic) Answer *answer;
 //@property (retain, nonatomic) NSMutableArray *answersToQuestion;
+@property (retain, nonatomic) NSNumber *numberOfAnswers;
+
+@property (retain, nonatomic) NSString *questionText;
+
 
 @end

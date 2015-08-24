@@ -45,7 +45,7 @@
     // Configure the view for the selected state
 }
 
--(void) setQuestion:(Question *)question {
+-(void)setQuestion:(Question *)question {
     
     self.profilePicView.image = question.user.profilePic;
     self.questionTextLabel.text = question.questionText;

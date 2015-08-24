@@ -11,6 +11,8 @@
 #import "QuestionCellAnswerView.h"
 #import "AnswerCell.h"
 #import "QuestionsTableViewController.h"
+#import "Answer.h"
+#import "User.h"
 
 @interface AnswersTVController ()
 
@@ -42,7 +44,7 @@
     self = [super initWithCoder:aCoder];
     if (self) {
         // The className to query on
-        self.parseClassName = @"Question";
+        self.parseClassName = @"Answer";
         
         // The key of the PFObject to display in the label of the default cell style
         self.textKey = @"name";
@@ -59,27 +61,61 @@
     return self;
 }
 
+//------------------------------------------------------------------------------------------------------------------------Need to check if this is right
+
 - (PFQuery *)queryForTable
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
+    [query whereKey:@"Question" equalTo:self.questionsTVC.question];
+    
     [query orderByDescending:@"createdAt"];
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *parseAnswers, NSError *error) {
+        if (!error) {
+            NSMutableArray *mutableParseAnswers = [parseAnswers mutableCopy];
+            self.answers = mutableParseAnswers ;
+        }
+    }];
+
     return query;
 }
 
-
-//- (void)insertNewAnswer:(id)sender {
-//    if (self.question != nil) {
-//        [self.questions insertObject:self.question atIndex:0];
+- (IBAction)createNewAnswer:(UIBarButtonItem *)sender {
+    
+    Answer *answer = [Answer objectWithClassName:@"Answer"];
+    
+    [self.answersCell setAnswer:answer];
+    
+    [answer setObject:[User currentUser] forKey:@"author"];  // Setting the current user as the author of this anwer
+    
+    [answer setObject:self.questionsTVC.question forKey:@"question"]; // Setting the question this answer belongs to
+    
+    [answer saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+        } else {
+            // There was a problem, check error.description
+        }
+    }];
+    
+    
+    //------------------------------------------------------------------------------Should I update the local array or refetch then reload the tableView?
+//    if (answer.answerText != nil) {
+//        [self.answers insertObject:answer atIndex:0];
 //        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 //        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 //    }
-//}
+
+}
+
+// Trying to get the same instance of the Question
 
 -(void)setQuestion:(Question *)question {
     self.question = question;
 }
 
+//------------------------------------------------------------------------------------------------------------------------Need to check if this is right
 
 #pragma mark - Table View
 
@@ -91,8 +127,7 @@
     return self.objects.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // Look into register cell bloctagram
     NSString *identifier;
 

@@ -10,6 +10,7 @@
 #import "LogInViewController.h"
 #import "User.h"
 #import "Question.h"
+#import "Answer.h"
 #import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
@@ -37,6 +38,7 @@
     // Initialize Parse.
     [User registerSubclass];
     [Question registerSubclass];
+    [Answer registerSubclass];
     [Parse setApplicationId:@"Fur1pXrZLPNW7kyavY7otL1SLaBqj0SmauqJ1itw"
                   clientKey:@"rkdFBeT93ehQehZ6eVGNEUn8x2PhNgIrrqhe1RCp"];
     

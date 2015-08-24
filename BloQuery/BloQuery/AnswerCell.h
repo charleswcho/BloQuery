@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class Answer;
+
 @interface AnswerCell : UITableViewCell
+
++ (CGFloat)heightForAnswer:(Answer *)answer;
+- (void)setAnswer:(Answer *)answer;
 
 @end

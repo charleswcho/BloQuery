@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		BA1F29A91B8166AB00219F95 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1F29A81B8166AB00219F95 /* Question.m */; };
 		BA1F29AF1B8178D300219F95 /* InterestLevelIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1F29AE1B8178D300219F95 /* InterestLevelIcon.m */; };
+		BA3383131B8A52F700C41008 /* NewAnswerTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3383121B8A52F700C41008 /* NewAnswerTVC.m */; };
+		BA3383181B8A543200C41008 /* NewAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3383171B8A543200C41008 /* NewAnswerCell.m */; };
+		BA33831B1B8A572000C41008 /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA33831A1B8A572000C41008 /* Answer.m */; };
 		BA55ADAA1B828A2700985717 /* AnswersTVController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55ADA91B828A2700985717 /* AnswersTVController.m */; };
 		BA55ADAD1B82917F00985717 /* QuestionCellAnswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55ADAC1B82917F00985717 /* QuestionCellAnswerView.m */; };
 		BA55ADB11B8291B200985717 /* AnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55ADB01B8291B200985717 /* AnswerCell.m */; };
@@ -64,6 +67,12 @@
 		BA1F29A81B8166AB00219F95 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		BA1F29AD1B8178D300219F95 /* InterestLevelIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestLevelIcon.h; sourceTree = "<group>"; };
 		BA1F29AE1B8178D300219F95 /* InterestLevelIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestLevelIcon.m; sourceTree = "<group>"; };
+		BA3383111B8A52F700C41008 /* NewAnswerTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAnswerTVC.h; sourceTree = "<group>"; };
+		BA3383121B8A52F700C41008 /* NewAnswerTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAnswerTVC.m; sourceTree = "<group>"; };
+		BA3383161B8A543200C41008 /* NewAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAnswerCell.h; sourceTree = "<group>"; };
+		BA3383171B8A543200C41008 /* NewAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAnswerCell.m; sourceTree = "<group>"; };
+		BA3383191B8A572000C41008 /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Answer.h; sourceTree = "<group>"; };
+		BA33831A1B8A572000C41008 /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answer.m; sourceTree = "<group>"; };
 		BA55ADA81B828A2700985717 /* AnswersTVController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswersTVController.h; sourceTree = "<group>"; };
 		BA55ADA91B828A2700985717 /* AnswersTVController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswersTVController.m; sourceTree = "<group>"; };
 		BA55ADAB1B82917F00985717 /* QuestionCellAnswerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCellAnswerView.h; sourceTree = "<group>"; };
@@ -158,6 +167,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA3383141B8A530A00C41008 /* New Answer */ = {
+			isa = PBXGroup;
+			children = (
+				BA3383111B8A52F700C41008 /* NewAnswerTVC.h */,
+				BA3383121B8A52F700C41008 /* NewAnswerTVC.m */,
+				BA3383151B8A53B900C41008 /* Custom cell */,
+			);
+			name = "New Answer";
+			sourceTree = "<group>";
+		};
+		BA3383151B8A53B900C41008 /* Custom cell */ = {
+			isa = PBXGroup;
+			children = (
+				BA3383161B8A543200C41008 /* NewAnswerCell.h */,
+				BA3383171B8A543200C41008 /* NewAnswerCell.m */,
+			);
+			name = "Custom cell";
+			sourceTree = "<group>";
+		};
 		BA55ADAE1B82918700985717 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +263,7 @@
 			children = (
 				BA8AC18F1B8141F6000D6A15 /* Questions view */,
 				BA8AC18E1B8141A3000D6A15 /* Answers view */,
+				BA3383141B8A530A00C41008 /* New Answer */,
 				BA8AC18D1B81414F000D6A15 /* Login */,
 			);
 			name = Controllers;
@@ -247,6 +276,8 @@
 				BA8AC1911B814385000D6A15 /* User.m */,
 				BA1F29A71B8166AB00219F95 /* Question.h */,
 				BA1F29A81B8166AB00219F95 /* Question.m */,
+				BA3383191B8A572000C41008 /* Answer.h */,
+				BA33831A1B8A572000C41008 /* Answer.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -443,8 +474,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA8AC1921B814385000D6A15 /* User.m in Sources */,
+				BA33831B1B8A572000C41008 /* Answer.m in Sources */,
+				BA3383131B8A52F700C41008 /* NewAnswerTVC.m in Sources */,
 				BA8AC11C1B7EA3FC000D6A15 /* AppDelegate.m in Sources */,
 				BA55ADAD1B82917F00985717 /* QuestionCellAnswerView.m in Sources */,
+				BA3383181B8A543200C41008 /* NewAnswerCell.m in Sources */,
 				BA55ADB11B8291B200985717 /* AnswerCell.m in Sources */,
 				BA8AC17E1B7EC566000D6A15 /* QuestionsCell.m in Sources */,
 				BAEC70AA1B879A5900BE1DFA /* signUpViewControllerConfigure.m in Sources */,

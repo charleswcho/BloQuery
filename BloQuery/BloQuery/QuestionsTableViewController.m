@@ -10,6 +10,7 @@
 #import "QuestionsCell.h"
 #import "AnswersTVController.h"
 #import "Question.h"
+#import "User.h"
 
 @interface QuestionsTableViewController ()
 
@@ -22,25 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//------------------------------------------------------TODO : Create a new Question HERE
-//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewQuestion:)];
-//    self.navigationItem.rightBarButtonItem = addButton;
-    
     // Have to reset this back to showing
     self.navigationItem.hidesBackButton = YES;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    [query orderByDescending:@"createdAt"];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch an array of Questions from the Question class
-        if (!error) {
-            NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
-            self.questions = mutableParseQuestions;  // Set local array to fetched Parse questions
-        }
-    }];
-
 }
 
 #pragma mark - Parse setup
@@ -67,22 +51,42 @@
     return self;
 }
 
+//------------------------------------------------------------------------------------------------------------------------Need to check if this is right
+
 - (PFQuery *)queryForTable
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    
     [query orderByDescending:@"createdAt"];
     
+    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch an array of Questions from the Question class
+        if (!error) {
+            NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
+            self.questions = mutableParseQuestions;  // Set local array to fetched Parse questions
+        }
+    }];
+
     return query;
 }
 
-//------------------------------------------------------TODO : Create a new Question HERE
-//- (void)insertNewQuestion:(id)sender {
-//    if (self.question != nil) {
+- (IBAction)createNewQuestion:(UIBarButtonItem *)sender { // Creating a new question here
+    
+    Question *newQuestion = [Question objectWithClassName:@"Question"];
+    
+    self.question = newQuestion;  // Store the new question to the local variable
+    
+    [self.question setObject:[User currentUser] forKey:@"author"];  // Save the curret user as the author
+    
+    
+    //------------------------------------------------------------------------------Should I update the local array or refetch then reload the tableView?
+//    if (self.question != nil) {  // Insert new question into the local array 
 //        [self.questions insertObject:self.question atIndex:0];
 //        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 //        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 //    }
-//}
+    
+}
+
 
 #pragma mark - Table View
 
@@ -118,6 +122,9 @@
     return cell;
 }
 
+//------------------------------------------------------------------------------------------------------------------------Need to check if this is right
+
+
 // # of answers button clicked
 
 -(void)numberOfAnswersButtonTapped:(id)sender {
@@ -125,12 +132,7 @@
     UIButton *senderButton = (UIButton *)sender;
     NSLog(@"current Row=%ld", (long)senderButton.tag);
     
-    
-    
-    
 }
-
-
 
 // Editing tableView
 
