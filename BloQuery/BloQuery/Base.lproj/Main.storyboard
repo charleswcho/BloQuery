@@ -315,9 +315,9 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="j5A-hv-q3d"/>
                                             <exclude reference="2FW-gU-B1H"/>
                                             <exclude reference="AlU-eR-ejG"/>
+                                            <exclude reference="j5A-hv-q3d"/>
                                             <exclude reference="Lqf-wY-RiK"/>
                                             <exclude reference="Nzn-6B-wo8"/>
                                             <exclude reference="X4C-3q-nzA"/>

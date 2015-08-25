@@ -45,6 +45,7 @@
 		BABD8F6E1B852CEC00F1F519 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABD8F6D1B852CEC00F1F519 /* ParseUI.framework */; };
 		BABD8F701B852D0600F1F519 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABD8F6F1B852D0600F1F519 /* ParseTwitterUtils.framework */; };
 		BABD8F751B866A6D00F1F519 /* QuestionsTextLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD8F741B866A6D00F1F519 /* QuestionsTextLabel.m */; };
+		BABF7F731B8BDED100F14E84 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BABF7F721B8BDED100F14E84 /* Reachability.m */; };
 		BAEC70A51B87946100BE1DFA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEC70A41B87946100BE1DFA /* Images.xcassets */; };
 		BAEC70AA1B879A5900BE1DFA /* signUpViewControllerConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEC70A91B879A5900BE1DFA /* signUpViewControllerConfigure.m */; };
 		BAEC70AD1B879A7200BE1DFA /* logInViewControllerConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEC70AC1B879A7200BE1DFA /* logInViewControllerConfigure.m */; };
@@ -119,6 +120,8 @@
 		BABD8F6F1B852D0600F1F519 /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
 		BABD8F731B866A6D00F1F519 /* QuestionsTextLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsTextLabel.h; sourceTree = "<group>"; };
 		BABD8F741B866A6D00F1F519 /* QuestionsTextLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsTextLabel.m; sourceTree = "<group>"; };
+		BABF7F711B8BDED100F14E84 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		BABF7F721B8BDED100F14E84 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		BAEC70A41B87946100BE1DFA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BAEC70A81B879A5900BE1DFA /* signUpViewControllerConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = signUpViewControllerConfigure.h; sourceTree = "<group>"; };
 		BAEC70A91B879A5900BE1DFA /* signUpViewControllerConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = signUpViewControllerConfigure.m; sourceTree = "<group>"; };
@@ -133,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA8AC1541B7EA522000D6A15 /* SystemConfiguration.framework in Frameworks */,
 				BA8AC15C1B7EA550000D6A15 /* Social.framework in Frameworks */,
 				BABD8F681B852CAF00F1F519 /* Bolts.framework in Frameworks */,
 				BABD8F6C1B852CCC00F1F519 /* ParseFacebookUtilsV4.framework in Frameworks */,
@@ -141,7 +145,6 @@
 				BA8AC1581B7EA540000D6A15 /* libsqlite3.dylib in Frameworks */,
 				BA8AC1561B7EA534000D6A15 /* libz.dylib in Frameworks */,
 				BABD8F591B83A1DB00F1F519 /* FBSDKCoreKit.framework in Frameworks */,
-				BA8AC1541B7EA522000D6A15 /* SystemConfiguration.framework in Frameworks */,
 				BA8AC1521B7EA518000D6A15 /* StoreKit.framework in Frameworks */,
 				BABD8F6E1B852CEC00F1F519 /* ParseUI.framework in Frameworks */,
 				BA8AC1501B7EA511000D6A15 /* Security.framework in Frameworks */,
@@ -221,6 +224,8 @@
 			children = (
 				BA8AC11A1B7EA3FC000D6A15 /* AppDelegate.h */,
 				BA8AC11B1B7EA3FC000D6A15 /* AppDelegate.m */,
+				BABF7F711B8BDED100F14E84 /* Reachability.h */,
+				BABF7F721B8BDED100F14E84 /* Reachability.m */,
 				BA1F29AD1B8178D300219F95 /* InterestLevelIcon.h */,
 				BA1F29AE1B8178D300219F95 /* InterestLevelIcon.m */,
 				BA8AC13F1B7EA405000D6A15 /* Controllers */,
@@ -489,6 +494,7 @@
 				BA1F29A91B8166AB00219F95 /* Question.m in Sources */,
 				BA8AC1191B7EA3FC000D6A15 /* main.m in Sources */,
 				BA55ADAA1B828A2700985717 /* AnswersTVController.m in Sources */,
+				BABF7F731B8BDED100F14E84 /* Reachability.m in Sources */,
 				BA1F29AF1B8178D300219F95 /* InterestLevelIcon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

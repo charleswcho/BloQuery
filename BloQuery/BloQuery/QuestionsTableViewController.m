@@ -11,9 +11,12 @@
 #import "AnswersTVController.h"
 #import "Question.h"
 #import "User.h"
+#import "Reachability.h"
 
-@interface QuestionsTableViewController ()
-
+@interface QuestionsTableViewController () {
+    
+    Reachability *internetReachable;
+}
 @property (strong, nonatomic) NSMutableArray *questions;
 
 @end
@@ -38,11 +41,7 @@
         
         // The key of the PFObject to display in the label of the default cell style
         self.textKey = @"name";
-        
-        // Whether the built-in pull-to-refresh is enabled
         self.pullToRefreshEnabled = YES;
-        
-        // Whether the built-in pagination is enabled
         self.paginationEnabled = NO;
         
 //        self.objectsPerPage = 5;
@@ -57,40 +56,57 @@
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
-    [query orderByDescending:@"createdAt"];
-//    [query orderByDescending:@"numberOf"];  // How to sort by number of Answers?
+    [query fromLocalDatastore];
     
-    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch an array of Questions from the Question class
-        if (!error) {
+//    [query orderByDescending:@"numberOf"];  // How to sort by number of Answers?
+//    [query findObjects];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from local datastore
+//        if (parseQuestions != nil) {
 //            NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
 //            self.questions = mutableParseQuestions;  // Set local array to fetched Parse questions
-            
-            [Question saveAllInBackground:parseQuestions];
-        } else {
-            NSLog(@"error, %@", error);
-        }
-    }];
+//            
+//        } else {
+//            [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from Cloud
+//                [Question pinAllInBackground:parseQuestions];  // Save query results to local datastore
+//                
+//            }];
+//        }
+//    }];
     
     return query;
 }
 
-- (IBAction)createNewQuestion:(UIBarButtonItem *)sender { // Creating a new question here
+//- (IBAction)createNewQuestion:(UIBarButtonItem *)sender { // Creating a new question here
+//    
+//    Question *newQuestion = [Question objectWithClassName:@"Question"];
+//    
+//    self.question = newQuestion;  // Store the new question to the local variable
+//    
+//    // TODO ---------------------------------------------Need to save the questionText from the new view controller
+//    
+//    self.question.user = [User currentUser];  // Save the curret user as the author
+//
+//    [self.question pinInBackground]; // Save new question to local datastore
+//    
+//    [self.tableView reloadData]; // refresh table to show new question
+//}
+
+-(void)internetConnection {
+    internetReachable = [Reachability reachabilityForInternetConnection];
     
-    Question *newQuestion = [Question objectWithClassName:@"Question"];
+    internetReachable.reachableBlock = ^(Reachability*reach) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            // Update UI HERE
+        });
+    };
     
-    self.question = newQuestion;  // Store the new question to the local variable
+    internetReachable.unreachableBlock = ^(Reachability*reach) {
+        NSLog(@"No internet connection");
+    };
     
-    // TODO ---------------------------------------------Need to save the questionText from the new view controller
-    
-    [self.question setObject:[User currentUser] forKey:@"author"];  // Save the curret user as the author
-    
-    //------------------------------------------------------------------------------Should I update the local array or refetch then reload the tableView?
-//    if (self.question != nil) {  // Insert new question into the local array 
-//        [self.questions insertObject:self.question atIndex:0];
-//        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//    }
-    
+    [internetReachable startNotifier];
 }
 
 
@@ -104,21 +120,7 @@
     return self.objects.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    [query fromLocalDatastore];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch an array of Questions from the Question class
-        if (!error) {
-            
-            self.question = [parseQuestions objectAtIndex:indexPath.row]; // Save one question from row
-            
-        } else {
-            NSLog(@"error, %@", error);
-        }
-    }];
-
-//    self.question = [self.questions objectAtIndex:indexPath.row]; // Save one question from row
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(Question *)object {
 
     static NSString *identifier = @"QuestionsCell";
     
@@ -130,9 +132,9 @@
     
     //-----------------------------------------------------------Setup of the # of answers button in the custom cell
     
-    cell.numberOfAnswersButton.tag = indexPath.row;
-    [cell.numberOfAnswersButton addTarget:self action:@selector(numberOfAnswersButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    
+//    cell.numberOfAnswersButton.tag = indexPath.row;
+//    [cell.numberOfAnswersButton addTarget:self action:@selector(numberOfAnswersButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+//    
     [cell setQuestion:self.question];  //
     
 //    cell.delegate = self;

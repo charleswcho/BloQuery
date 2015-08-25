@@ -52,6 +52,8 @@
     self.profilePicView.image = question.user.profilePic;
     self.questionTextLabel.text = question.questionText;
     
+    
+    
 //    self.numberOfAnswersButton.titleLabel.text = question. + @"answers"  //  Need to create an answers class because answers have properties too
     
 //    NSString *numberOfAnswersString = [question.numberOfAnswers stringValue];
