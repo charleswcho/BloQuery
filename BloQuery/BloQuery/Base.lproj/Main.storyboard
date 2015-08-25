@@ -51,6 +51,7 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
+                                                <action selector="numberOfAnswersButtonTapped" destination="pGg-6v-bdr" eventType="touchUpInside" id="ZM4-jY-Ixt"/>
                                                 <segue destination="Tkb-Hd-ugk" kind="show" identifier="showAnswers" id="Hzs-Pa-hud"/>
                                             </connections>
                                         </button>

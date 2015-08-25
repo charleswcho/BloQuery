@@ -28,6 +28,7 @@
     
     // Have to reset this back to showing
     self.navigationItem.hidesBackButton = YES;
+    [self fetchQuestions];
 }
 
 #pragma mark - Parse setup
@@ -52,44 +53,38 @@
 
 //------------------------------------------------------------------------------------------------------------------------Need to check if this is right
 
-- (PFQuery *)queryForTable
+- (PFQuery *)queryForTable  // I'm having issues with using the method "findObjectInBackgroundWithBlock" in this method.
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
     [query fromLocalDatastore];
     
-//    [query orderByDescending:@"numberOf"];  // How to sort by number of Answers?
-//    [query findObjects];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from local datastore
-//        if (parseQuestions != nil) {
-//            NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
-//            self.questions = mutableParseQuestions;  // Set local array to fetched Parse questions
-//            
-//        } else {
-//            [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from Cloud
-//                [Question pinAllInBackground:parseQuestions];  // Save query results to local datastore
-//                
-//            }];
-//        }
-//    }];
-    
     return query;
 }
 
-//- (IBAction)createNewQuestion:(UIBarButtonItem *)sender { // Creating a new question here
-//    
-//    Question *newQuestion = [Question objectWithClassName:@"Question"];
-//    
-//    self.question = newQuestion;  // Store the new question to the local variable
-//    
-//    // TODO ---------------------------------------------Need to save the questionText from the new view controller
-//    
-//    self.question.user = [User currentUser];  // Save the curret user as the author
-//
-//    [self.question pinInBackground]; // Save new question to local datastore
-//    
-//    [self.tableView reloadData]; // refresh table to show new question
-//}
+- (void)fetchQuestions {
+    
+        PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+
+        [query orderByDescending:@"createdAt"];
+//        [query orderByDescending:@"numberOf"];  // How to sort by number of Answers?
+
+        [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from local datastore
+            if (parseQuestions != nil) {
+                NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
+                self.questions = mutableParseQuestions;  // if Set local array to fetched Parse questions
+    
+            } else {
+                if (internetReachable) {
+                    
+                [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from Cloud
+                    [Question pinAllInBackground:parseQuestions];  // Save query results to local datastore
+    
+                }];
+              }
+            }
+        }];
+}
 
 -(void)internetConnection {
     internetReachable = [Reachability reachabilityForInternetConnection];
@@ -99,6 +94,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             // Update UI HERE
+            //[self.tableView reloadData];
         });
     };
     
@@ -109,16 +105,23 @@
     [internetReachable startNotifier];
 }
 
+//- (IBAction)createNewQuestion:(UIBarButtonItem *)sender { // Creating a new question here
+//
+//    Question *newQuestion = [Question objectWithClassName:@"Question"];
+//
+//    self.question = newQuestion;  // Store the new question to the local variable
+//
+//    // TODO ---------------------------------------------Need to save the questionText from the new view controller
+//
+//    self.question.user = [User currentUser];  // Save the curret user as the author
+//
+//    [self.question pinInBackground]; // Save new question to local datastore
+//
+//    [self.tableView reloadData]; // refresh table to show new question
+//}
 
 #pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.objects.count;
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(Question *)object {
 
@@ -142,6 +145,16 @@
     return cell;
 }
 
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.objects.count;
+}
+
 //------------------------------------------------------------------------------------------------------------------------Need to check if this is right
 
 
@@ -158,14 +171,15 @@
 #pragma mark - Segues
 
 // # of answers button clicked
-
--(void)numberOfAnswersButtonTapped:(id)sender {
-    
+- (IBAction)numberOfAnswersButtonTapped {
     AnswersTVController *answersTVC = [[AnswersTVController alloc] init];
     
-   [self.navigationController pushViewController:answersTVC animated:YES];
-    
+    [self.navigationController pushViewController:answersTVC animated:YES];
+    [self.navigationController segueForUnwindingToViewController:self
+                                              fromViewController:answersTVC
+                                                      identifier:@"showAnswers"];
 }
+
 
 // --------------------------------------------------------------Instead of using a Delegate method should I use a IBAction?
 //
