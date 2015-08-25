@@ -64,7 +64,26 @@
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
     [query fromLocalDatastore];
+    [query orderByDescending:@"createdAt"];
+    //        [query orderByDescending:@"numberOf"];  // How to sort by number of Answers?
     
+    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from local datastore
+        if (parseQuestions != nil) {
+            NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
+            self.questions = mutableParseQuestions;  // if Set local array to fetched Parse questions
+            
+        } else {
+            
+            if ([InternetReachabilityManager isReachable]) {
+                
+                [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from Cloud
+                    [Question pinAllInBackground:parseQuestions];  // Save query results to local datastore
+                    
+                }];
+            }
+        }
+    }];
+
     return query;
 }
 
@@ -82,7 +101,7 @@
     
             } else {
 
-                if ([[InternetReachabilityManager sharedManager] isReachable]) {
+                if ([InternetReachabilityManager isReachable]) {
                     
                     [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from Cloud
                     [Question pinAllInBackground:parseQuestions];  // Save query results to local datastore
@@ -136,7 +155,6 @@
     
 //    cell.numberOfAnswersButton.tag = indexPath.row;
 //    [cell.numberOfAnswersButton addTarget:self action:@selector(numberOfAnswersButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-//    
     [cell setQuestion:self.question];  //
     
 //    cell.delegate = self;
