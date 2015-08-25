@@ -5,13 +5,12 @@
 //  Created by Charles Wesley Cho on 8/16/15.
 //  Copyright (c) 2015 Charles Wesley Cho. All rights reserved.
 //
-
 #import "QuestionsTableViewController.h"
-#import "QuestionsCell.h"
 #import "AnswersTVController.h"
 #import "Question.h"
 #import "User.h"
 #import "Reachability.h"
+#import "InternetReachabilityManager.h"
 
 @interface QuestionsTableViewController () {
     
@@ -28,6 +27,13 @@
     
     // Have to reset this back to showing
     self.navigationItem.hidesBackButton = YES;
+    
+    // Reachability did change
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reachabilityDidChange:)
+                                                 name:kReachabilityChangedNotification
+                                               object:nil];
+
     [self fetchQuestions];
 }
 
@@ -43,9 +49,9 @@
         // The key of the PFObject to display in the label of the default cell style
         self.textKey = @"name";
         self.pullToRefreshEnabled = YES;
-        self.paginationEnabled = NO;
+        self.paginationEnabled = YES;
         
-//        self.objectsPerPage = 5;
+        self.objectsPerPage = 10;
 
     }
     return self;
@@ -75,9 +81,10 @@
                 self.questions = mutableParseQuestions;  // if Set local array to fetched Parse questions
     
             } else {
-                if (internetReachable) {
+
+                if ([[InternetReachabilityManager sharedManager] isReachable]) {
                     
-                [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from Cloud
+                    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from Cloud
                     [Question pinAllInBackground:parseQuestions];  // Save query results to local datastore
     
                 }];
@@ -86,23 +93,15 @@
         }];
 }
 
--(void)internetConnection {
-    internetReachable = [Reachability reachabilityForInternetConnection];
-    
-    internetReachable.reachableBlock = ^(Reachability*reach) {
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            // Update UI HERE
-            //[self.tableView reloadData];
-        });
-    };
-    
-    internetReachable.unreachableBlock = ^(Reachability*reach) {
-        NSLog(@"No internet connection");
-    };
-    
-    [internetReachable startNotifier];
+- (void)reachabilityDidChange:(NSNotification *)notification {
+    Reachability *reachability = (Reachability *)[notification object];
+    if ([reachability isReachable]) {
+        NSLog(@"Reachable");
+        //if before there was no internet - now you can do whatever user wants when there was no internet
+    } else {
+        NSLog(@"Unreachable");
+        //alert retry
+    }
 }
 
 //- (IBAction)createNewQuestion:(UIBarButtonItem *)sender { // Creating a new question here

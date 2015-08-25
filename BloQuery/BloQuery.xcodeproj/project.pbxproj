@@ -51,6 +51,7 @@
 		BAEC70AD1B879A7200BE1DFA /* logInViewControllerConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEC70AC1B879A7200BE1DFA /* logInViewControllerConfigure.m */; };
 		BAEC70B21B87A9CF00BE1DFA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAEC70B11B87A9CF00BE1DFA /* Parse.framework */; };
 		BAEC70B41B87AADD00BE1DFA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAEC70B31B87AADD00BE1DFA /* Parse.framework */; };
+		BAF3FE1C1B8CC0C500F58165 /* InternetReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3FE1B1B8CC0C500F58165 /* InternetReachabilityManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,8 @@
 		BAEC70AC1B879A7200BE1DFA /* logInViewControllerConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = logInViewControllerConfigure.m; sourceTree = "<group>"; };
 		BAEC70B11B87A9CF00BE1DFA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		BAEC70B31B87AADD00BE1DFA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Downloads/parse-library-1.8.1/Parse.framework"; sourceTree = "<group>"; };
+		BAF3FE1A1B8CC0C500F58165 /* InternetReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetReachabilityManager.h; sourceTree = "<group>"; };
+		BAF3FE1B1B8CC0C500F58165 /* InternetReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetReachabilityManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +227,8 @@
 			children = (
 				BA8AC11A1B7EA3FC000D6A15 /* AppDelegate.h */,
 				BA8AC11B1B7EA3FC000D6A15 /* AppDelegate.m */,
+				BAF3FE1A1B8CC0C500F58165 /* InternetReachabilityManager.h */,
+				BAF3FE1B1B8CC0C500F58165 /* InternetReachabilityManager.m */,
 				BABF7F711B8BDED100F14E84 /* Reachability.h */,
 				BABF7F721B8BDED100F14E84 /* Reachability.m */,
 				BA1F29AD1B8178D300219F95 /* InterestLevelIcon.h */,
@@ -486,6 +491,7 @@
 				BA3383181B8A543200C41008 /* NewAnswerCell.m in Sources */,
 				BA55ADB11B8291B200985717 /* AnswerCell.m in Sources */,
 				BA8AC17E1B7EC566000D6A15 /* QuestionsCell.m in Sources */,
+				BAF3FE1C1B8CC0C500F58165 /* InternetReachabilityManager.m in Sources */,
 				BAEC70AA1B879A5900BE1DFA /* signUpViewControllerConfigure.m in Sources */,
 				BAEC70AD1B879A7200BE1DFA /* logInViewControllerConfigure.m in Sources */,
 				BABD8F751B866A6D00F1F519 /* QuestionsTextLabel.m in Sources */,

@@ -11,6 +11,8 @@
 #import "User.h"
 #import "Question.h"
 #import "Answer.h"
+#import "Reachability.h"
+#import "InternetReachabilityManager.h"
 #import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
@@ -35,7 +37,7 @@
     // https://parse.com/docs/ios_guide#localdatastore/iOS
     [Parse enableLocalDatastore];
     
-    #pragma mark Initialize Parse.
+    #pragma mark Initialize Parse
     
     // Register subclasses
     [User registerSubclass];
@@ -58,7 +60,8 @@
       [navVC pushViewController:[storyboard instantiateViewControllerWithIdentifier:@"QuestionsView"] animated:NO];
     }
     
-    
+    #pragma mark Initialize Social
+
     // Adding Facebook integration
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
@@ -68,7 +71,10 @@
     [PFTwitterUtils initializeWithConsumerKey:@"nC9P952CYwJtwc4wjZeXGiEIL"
                                consumerSecret:@"RRHQCDN6paMTs9VIlGVzL02oQvmKm78TpGVQg3ylRQWAycPYHl"];
     
+    #pragma mark Instantiate InternetReachabilityManager
     
+    [InternetReachabilityManager sharedManager];
+
     self.window.rootViewController = navVC;
     [self.window makeKeyAndVisible];
 
