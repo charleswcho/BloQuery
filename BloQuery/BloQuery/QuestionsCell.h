@@ -8,24 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class Question, QuestionsCell;
-
-//@protocol QuestionsCellDelegate <NSObject>
-//
-//-(void) cell:(QuestionsCell *)cell didPressAnswersButton:(UIButton *)numberOfAnswersButton;
-//
-//@end
+@class Question, QuestionsCell, DataSource;
 
 @interface QuestionsCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *profilePicView;
-@property (weak, nonatomic) IBOutlet UILabel *questionTextLabel;
-@property (strong, nonatomic) IBOutlet UIButton *numberOfAnswersButton;
-@property (weak, nonatomic) IBOutlet UIImageView *interestLevelView;
-
-//@property (nonatomic, weak) id <QuestionsCellDelegate> delegate;
+@property (strong, nonatomic) Question *questionItem;
 
 + (CGFloat)heightForQuestion:(Question *)question;
-- (void) setQuestion:(Question *)question;
 
 @end

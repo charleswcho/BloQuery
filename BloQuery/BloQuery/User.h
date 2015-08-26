@@ -14,5 +14,6 @@
 @property (retain, nonatomic) NSString *description;
 
 + (User *)currentUser;
+- (instancetype) initWithDictionary:(NSDictionary *)userDictionary;
 
 @end

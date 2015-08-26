@@ -10,6 +10,7 @@
 
 @implementation Question
 
+@dynamic idNumber;
 @dynamic user;
 @dynamic answer;
 @dynamic questionText;

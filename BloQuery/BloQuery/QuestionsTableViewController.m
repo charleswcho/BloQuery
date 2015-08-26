@@ -9,6 +9,7 @@
 #import "AnswersTVController.h"
 #import "Question.h"
 #import "User.h"
+#import "DataSource.h"
 #import "Reachability.h"
 #import "InternetReachabilityManager.h"
 
@@ -16,7 +17,6 @@
     
     Reachability *internetReachable;
 }
-@property (strong, nonatomic) NSMutableArray *questions;
 
 @end
 
@@ -28,12 +28,12 @@
     // Have to reset this back to showing
     self.navigationItem.hidesBackButton = YES;
     
-    // Reachability did change
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(reachabilityDidChange:)
-                                                 name:kReachabilityChangedNotification
-                                               object:nil];
-
+//    // Reachability did change
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(reachabilityDidChange:)
+//                                                 name:kReachabilityChangedNotification
+//                                               object:nil];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -47,6 +47,8 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from local datastore
         if (parseQuestions != nil) {
             NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
+            
+            
             self.questions = mutableParseQuestions;  // if Set local array to fetched Parse questions
             
         } else {
@@ -122,24 +124,18 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(Question *)object {
-
-    self.question = [self.questions objectAtIndex:indexPath.row];
     
     static NSString *identifier = @"QuestionsCell";
     
-    QuestionsCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    QuestionsCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
 
     if (cell == nil) {
         cell = [[QuestionsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
     //-----------------------------------------------------------Setup of the # of answers button in the custom cell
-    
-//    cell.numberOfAnswersButton.tag = indexPath.row;
-//    [cell.numberOfAnswersButton addTarget:self action:@selector(numberOfAnswersButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [cell setQuestion:self.question];  //
-    
-//    cell.delegate = self;
+
+    cell.questionItem = [DataSource sharedInstance].questionItems[indexPath.row];
     
     return cell;
 }

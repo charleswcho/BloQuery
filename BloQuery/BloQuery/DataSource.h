@@ -11,6 +11,6 @@
 @interface DataSource : NSObject
 
 +(instancetype) sharedInstance;
-@property (nonatomic, strong, readonly) NSArray *questions;
+@property (nonatomic, strong, readonly) NSArray *questionItems;
 
 @end

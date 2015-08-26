@@ -14,7 +14,7 @@
 
 +(NSString *)parseClassName;
 
-@property (retain, nonatomic) User *user;
+@property (retain, nonatomic) User *from;
 @property (retain, nonatomic) NSString *answerText;
 @property (retain, nonatomic) NSNumber *numberOfVotes;
 

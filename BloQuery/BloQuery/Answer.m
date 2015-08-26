@@ -10,7 +10,7 @@
 
 @implementation Answer
 
-@synthesize user;
+@synthesize from;
 @synthesize answerText;
 @synthesize numberOfVotes;
 

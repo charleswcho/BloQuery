@@ -13,6 +13,7 @@
 
 +(NSString *)parseClassName;
 
+@property (nonatomic, strong) NSString *idNumber;
 @property (retain, nonatomic) User *user;
 @property (retain, nonatomic) Answer *answer;
 
@@ -21,5 +22,6 @@
 
 @property (retain, nonatomic) NSString *questionText;
 
+- (instancetype) initWithDictionary:(NSDictionary *)questionDictionary;
 
 @end

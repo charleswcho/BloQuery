@@ -13,7 +13,7 @@
 
 @interface DataSource ()
 
-@property (nonatomic, strong) NSArray *questions;
+@property (nonatomic, strong) NSArray *questionItems;
 
 @end
 

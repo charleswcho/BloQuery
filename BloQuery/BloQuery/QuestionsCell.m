@@ -11,6 +11,10 @@
 
 @interface QuestionsCell ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *profilePicView;
+@property (weak, nonatomic) IBOutlet UILabel *questionTextLabel;
+@property (strong, nonatomic) IBOutlet UIButton *numberOfAnswersButton;
+@property (weak, nonatomic) IBOutlet UIImageView *interestLevelView;
 
 @end
 
@@ -37,7 +41,6 @@
     
     [self.numberOfAnswersButton.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [self.numberOfAnswersButton.layer setBorderWidth:1];
-    
 
     
 }
@@ -48,24 +51,14 @@
     // Configure the view for the selected state
 }
 
--(void) setQuestion:(Question *)question {
-    self.profilePicView.image = question.user.profilePic;
-    self.questionTextLabel.text = question.questionText;
+-(void) setQuestionItem:(Question *)questionItem {
+    _questionItem = questionItem;
+    self.profilePicView.image = _questionItem.user.profilePic;
+    self.questionTextLabel.text = _questionItem.questionText;
+//    self.numberOfAnswersButton.titleLabel.text = _questionItem.numberOfAnswers
+//    self.interestLevelView.image = _questionItem.
     
-    
-    
-//    self.numberOfAnswersButton.titleLabel.text = question. + @"answers"  //  Need to create an answers class because answers have properties too
-    
-//    NSString *numberOfAnswersString = [question.numberOfAnswers stringValue];
-//    [self.numberOfAnswersButton setTitle:numberOfAnswersString forState:UIControlStateNormal];
-    
-//    self.interestLevelView = question.interestLevel;        //-------------------------------------TODO  Create a custom class
-
 }
-
-// ----------------------------Are these necessary?
-
-
 
 
 @end

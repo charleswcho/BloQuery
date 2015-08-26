@@ -12,6 +12,4 @@
 
 @interface QuestionsTableViewController : PFQueryTableViewController
 
-@property (nonatomic, strong) Question *question;
-
 @end
