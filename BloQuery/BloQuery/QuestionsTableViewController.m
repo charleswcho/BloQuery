@@ -30,18 +30,18 @@
     self.navigationItem.hidesBackButton = YES;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    [query orderByDescending:@"createdAt"];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch an array of Questions from the Question class
-        if (!error) {
-            NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
-            self.questions = mutableParseQuestions;  // Set local array to fetched Parse questions
-        }
-    }];
-
-}
+//- (void)viewWillAppear:(BOOL)animated {
+//    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+//    [query orderByDescending:@"createdAt"];
+//    
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch an array of Questions from the Question class
+//        if (!error) {
+//            NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
+//            self.questions = mutableParseQuestions;  // Set local array to fetched Parse questions
+//        }
+//    }];
+//
+//}
 
 #pragma mark - Parse setup
 
