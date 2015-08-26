@@ -34,7 +34,32 @@
                                                  name:kReachabilityChangedNotification
                                                object:nil];
 
-//    [self fetchQuestions];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    
+//    [query fromLocalDatastore];
+    [query orderByDescending:@"createdAt"];
+    //        [query orderByDescending:@"numberOf"];  // How to sort by number of Answers?
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from local datastore
+        if (parseQuestions != nil) {
+            NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
+            self.questions = mutableParseQuestions;  // if Set local array to fetched Parse questions
+            
+        } else {
+            
+//            if ([InternetReachabilityManager isReachable]) {
+//                
+//                [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from Cloud
+//                    [Question pinAllInBackground:parseQuestions];  // Save query results to local datastore
+//                    
+//                }];
+//            }
+        }
+    }];
 }
 
 #pragma mark - Parse setup
@@ -62,60 +87,10 @@
 - (PFQuery *)queryForTable  // I'm having issues with using the method "findObjectInBackgroundWithBlock" in this method.
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    
-    [query fromLocalDatastore];
-    [query orderByDescending:@"createdAt"];
-    //        [query orderByDescending:@"numberOf"];  // How to sort by number of Answers?
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from local datastore
-        if (parseQuestions != nil) {
-            NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
-            self.questions = mutableParseQuestions;  // if Set local array to fetched Parse questions
-            
-        } else {
-            
-            if ([InternetReachabilityManager isReachable]) {
-                
-                [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from Cloud
-                    [Question pinAllInBackground:parseQuestions];  // Save query results to local datastore
-                    
-                }];
-            }
-        }
-    }];
 
     return query;
 }
 
-- (BFTask *)loadObjects {
-    
-    
-}
-
-//- (void)fetchQuestions {
-//    
-//        PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-//
-//        [query orderByDescending:@"createdAt"];
-////        [query orderByDescending:@"numberOf"];  // How to sort by number of Answers?
-//
-//        [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from local datastore
-//            if (parseQuestions != nil) {
-//                NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
-//                self.questions = mutableParseQuestions;  // if Set local array to fetched Parse questions
-//    
-//            } else {
-//
-//                if ([InternetReachabilityManager isReachable]) {
-//                    
-//                    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from Cloud
-//                    [Question pinAllInBackground:parseQuestions];  // Save query results to local datastore
-//    
-//                }];
-//              }
-//            }
-//        }];
-//}
 
 - (void)reachabilityDidChange:(NSNotification *)notification {
     Reachability *reachability = (Reachability *)[notification object];
@@ -148,6 +123,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(Question *)object {
 
+    self.question = [self.questions objectAtIndex:indexPath.row];
+    
     static NSString *identifier = @"QuestionsCell";
     
     QuestionsCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];

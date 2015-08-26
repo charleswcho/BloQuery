@@ -46,6 +46,7 @@
 		BABD8F701B852D0600F1F519 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABD8F6F1B852D0600F1F519 /* ParseTwitterUtils.framework */; };
 		BABD8F751B866A6D00F1F519 /* QuestionsTextLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD8F741B866A6D00F1F519 /* QuestionsTextLabel.m */; };
 		BABF7F731B8BDED100F14E84 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BABF7F721B8BDED100F14E84 /* Reachability.m */; };
+		BADB47DC1B8E2DC70079F049 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB47DB1B8E2DC70079F049 /* DataSource.m */; };
 		BAEC70A51B87946100BE1DFA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEC70A41B87946100BE1DFA /* Images.xcassets */; };
 		BAEC70AA1B879A5900BE1DFA /* signUpViewControllerConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEC70A91B879A5900BE1DFA /* signUpViewControllerConfigure.m */; };
 		BAEC70AD1B879A7200BE1DFA /* logInViewControllerConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEC70AC1B879A7200BE1DFA /* logInViewControllerConfigure.m */; };
@@ -123,6 +124,8 @@
 		BABD8F741B866A6D00F1F519 /* QuestionsTextLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsTextLabel.m; sourceTree = "<group>"; };
 		BABF7F711B8BDED100F14E84 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		BABF7F721B8BDED100F14E84 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		BADB47DA1B8E2DC70079F049 /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
+		BADB47DB1B8E2DC70079F049 /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
 		BAEC70A41B87946100BE1DFA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BAEC70A81B879A5900BE1DFA /* signUpViewControllerConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = signUpViewControllerConfigure.h; sourceTree = "<group>"; };
 		BAEC70A91B879A5900BE1DFA /* signUpViewControllerConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = signUpViewControllerConfigure.m; sourceTree = "<group>"; };
@@ -288,6 +291,8 @@
 				BA1F29A81B8166AB00219F95 /* Question.m */,
 				BA3383191B8A572000C41008 /* Answer.h */,
 				BA33831A1B8A572000C41008 /* Answer.m */,
+				BADB47DA1B8E2DC70079F049 /* DataSource.h */,
+				BADB47DB1B8E2DC70079F049 /* DataSource.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 				BA8AC11C1B7EA3FC000D6A15 /* AppDelegate.m in Sources */,
 				BA55ADAD1B82917F00985717 /* QuestionCellAnswerView.m in Sources */,
 				BA3383181B8A543200C41008 /* NewAnswerCell.m in Sources */,
+				BADB47DC1B8E2DC70079F049 /* DataSource.m in Sources */,
 				BA55ADB11B8291B200985717 /* AnswerCell.m in Sources */,
 				BA8AC17E1B7EC566000D6A15 /* QuestionsCell.m in Sources */,
 				BAF3FE1C1B8CC0C500F58165 /* InternetReachabilityManager.m in Sources */,
