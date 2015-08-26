@@ -10,10 +10,10 @@
 
 @interface User : PFUser <PFSubclassing>
 
+@property (retain, nonatomic) NSString *objectId;
 @property (retain, nonatomic) UIImage *profilePic;
 @property (retain, nonatomic) NSString *description;
 
 + (User *)currentUser;
-- (instancetype) initWithDictionary:(NSDictionary *)userDictionary;
 
 @end

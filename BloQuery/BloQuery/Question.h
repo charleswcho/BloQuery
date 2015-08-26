@@ -13,15 +13,11 @@
 
 +(NSString *)parseClassName;
 
-@property (nonatomic, strong) NSString *idNumber;
+@property (nonatomic, strong) NSString *objectId;
 @property (retain, nonatomic) User *user;
-@property (retain, nonatomic) Answer *answer;
-
-//@property (retain, nonatomic) NSMutableArray *answersToQuestion;  // We're not using arrays to store
+@property (retain, nonatomic) NSMutableArray *answers;  // We're not using arrays to store
 //@property (retain, nonatomic) NSNumber *numberOfAnswers;
 
 @property (retain, nonatomic) NSString *questionText;
-
-- (instancetype) initWithDictionary:(NSDictionary *)questionDictionary;
 
 @end

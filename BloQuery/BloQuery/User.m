@@ -11,31 +11,13 @@
 
 @implementation User
 
+@dynamic objectId;
 @dynamic profilePic;
 @dynamic description;
 
 + (User* )currentUser
 {
     return (User* )[PFUser currentUser];
-}
-
-
-- (instancetype) initWithDictionary:(NSDictionary *)userDictionary {
-    self = [super init];
-    
-    if (self) {
-        self.profilePic = userDictionary[@"id"];
-        self.description = userDictionary[@"description"];
-        
-//        NSString *profileURLString = userDictionary[@"profile_picture"];
-//        NSURL *profileURL = [NSURL URLWithString:profileURLString];
-//        
-//        if (profileURL) {
-//            self.profilePictureURL = profileURL;
-//        }
-    }
-    
-    return self;
 }
 
 @end

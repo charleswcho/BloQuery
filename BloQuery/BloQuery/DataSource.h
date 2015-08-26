@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class User;
+
 @interface DataSource : NSObject
 
 +(instancetype) sharedInstance;
 @property (nonatomic, strong, readonly) NSArray *questionItems;
+
+@property (nonatomic, strong) User *currentUser;
 
 @end

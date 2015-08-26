@@ -11,6 +11,7 @@
 #import "User.h"
 #import "Question.h"
 #import "Answer.h"
+#import "DataSource.h"
 #import "Reachability.h"
 #import "InternetReachabilityManager.h"
 #import <Parse/Parse.h>
@@ -33,6 +34,9 @@
     UINavigationController *navVC = (UINavigationController *) self.window.rootViewController;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 
+    // initilize datasource
+    [DataSource sharedInstance];
+    
     // [Optional] Power your app with Local Datastore. For more info, go to
     // https://parse.com/docs/ios_guide#localdatastore/iOS
     [Parse enableLocalDatastore];

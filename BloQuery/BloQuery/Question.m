@@ -6,11 +6,10 @@
 
 #import <Parse/PFObject+Subclass.h>
 #import "Question.h"
-#import "User.h"
 
 @implementation Question
 
-@dynamic idNumber;
+@dynamic objectId;
 @dynamic user;
 @dynamic answer;
 @dynamic questionText;
@@ -19,5 +18,7 @@
 +(NSString *)parseClassName {
     return @"Question";
 }
+
+
 
 @end
