@@ -34,7 +34,7 @@
                                                  name:kReachabilityChangedNotification
                                                object:nil];
 
-    [self fetchQuestions];
+//    [self fetchQuestions];
 }
 
 #pragma mark - Parse setup
@@ -87,30 +87,35 @@
     return query;
 }
 
-- (void)fetchQuestions {
+- (BFTask *)loadObjects {
     
-        PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-
-        [query orderByDescending:@"createdAt"];
-//        [query orderByDescending:@"numberOf"];  // How to sort by number of Answers?
-
-        [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from local datastore
-            if (parseQuestions != nil) {
-                NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
-                self.questions = mutableParseQuestions;  // if Set local array to fetched Parse questions
     
-            } else {
-
-                if ([InternetReachabilityManager isReachable]) {
-                    
-                    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from Cloud
-                    [Question pinAllInBackground:parseQuestions];  // Save query results to local datastore
-    
-                }];
-              }
-            }
-        }];
 }
+
+//- (void)fetchQuestions {
+//    
+//        PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+//
+//        [query orderByDescending:@"createdAt"];
+////        [query orderByDescending:@"numberOf"];  // How to sort by number of Answers?
+//
+//        [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from local datastore
+//            if (parseQuestions != nil) {
+//                NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
+//                self.questions = mutableParseQuestions;  // if Set local array to fetched Parse questions
+//    
+//            } else {
+//
+//                if ([InternetReachabilityManager isReachable]) {
+//                    
+//                    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from Cloud
+//                    [Question pinAllInBackground:parseQuestions];  // Save query results to local datastore
+//    
+//                }];
+//              }
+//            }
+//        }];
+//}
 
 - (void)reachabilityDidChange:(NSNotification *)notification {
     Reachability *reachability = (Reachability *)[notification object];
