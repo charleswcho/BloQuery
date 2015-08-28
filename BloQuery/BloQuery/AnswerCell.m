@@ -47,7 +47,7 @@
 
 -(void)setAnswer:(Answer *)answer {
     self.answerText.text = answer.answerText;
-    self.answerProfilePic.image = answer.user.profilePic;
+    self.answerProfilePic.image = answer.from.profilePic;
 }
 
 @end

@@ -33,36 +33,11 @@
 //                                             selector:@selector(reachabilityDidChange:)
 //                                                 name:kReachabilityChangedNotification
 //                                               object:nil];
-    
-}
 
--(void)viewWillAppear:(BOOL)animated {
-    
-    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    
-//    [query fromLocalDatastore];
-    [query orderByDescending:@"createdAt"];
-    //        [query orderByDescending:@"numberOf"];  // How to sort by number of Answers?
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from local datastore
-        if (parseQuestions != nil) {
-            NSMutableArray *mutableParseQuestions = [parseQuestions mutableCopy];
-            
-            
-            self.questions = mutableParseQuestions;  // if Set local array to fetched Parse questions
-            
-        } else {
-            
-//            if ([InternetReachabilityManager isReachable]) {
-//                
-//                [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from Cloud
-//                    [Question pinAllInBackground:parseQuestions];  // Save query results to local datastore
-//                    
-//                }];
-//            }
-        }
-    }];
 }
+            
+
+
 
 #pragma mark - Parse setup
 
@@ -94,16 +69,23 @@
 }
 
 
-- (void)reachabilityDidChange:(NSNotification *)notification {
-    Reachability *reachability = (Reachability *)[notification object];
-    if ([reachability isReachable]) {
-        NSLog(@"Reachable");
-        //if before there was no internet - now you can do whatever user wants when there was no internet
-    } else {
-        NSLog(@"Unreachable");
-        //alert retry
-    }
-}
+//    if ([InternetReachabilityManager isReachable]) {
+//
+//        [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) { // Fetch from Cloud
+//            [Question pinAllInBackground:parseQuestions];  // Save query results to local datastore
+//
+//        }];
+
+//- (void)reachabilityDidChange:(NSNotification *)notification {
+//    Reachability *reachability = (Reachability *)[notification object];
+//    if ([reachability isReachable]) {
+//        NSLog(@"Reachable");
+//        //if before there was no internet - now you can do whatever user wants when there was no internet
+//    } else {
+//        NSLog(@"Unreachable");
+//        //alert retry
+//    }
+//}
 
 //- (IBAction)createNewQuestion:(UIBarButtonItem *)sender { // Creating a new question here
 //
@@ -136,7 +118,7 @@
     //-----------------------------------------------------------Setup of the # of answers button in the custom cell
 
     cell.questionItem = [DataSource sharedInstance].questionItems[indexPath.row];
-    
+        
     return cell;
 }
 

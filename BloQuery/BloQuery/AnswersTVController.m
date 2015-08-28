@@ -67,53 +67,37 @@
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
-    [query whereKey:@"Answer" equalTo:self.questionsTVC.question];
-    
-    [query orderByDescending:@"createdAt"];
-
-    [query findObjectsInBackgroundWithBlock:^(NSArray *parseAnswers, NSError *error) {
-        if (!error) {
-            NSMutableArray *mutableParseAnswers = [parseAnswers mutableCopy];
-            self.answers = mutableParseAnswers ;
-        }
-    }];
-
     return query;
 }
 
-- (IBAction)createNewAnswer:(UIBarButtonItem *)sender {
-    
-    Answer *answer = [Answer objectWithClassName:@"Answer"];
-    
-    [self.answersCell setAnswer:answer];
-    
-    [answer setObject:[User currentUser] forKey:@"author"];  // Setting the current user as the author of this anwer
-    
-    [answer setObject:self.questionsTVC.question forKey:@"question"]; // Setting the question this answer belongs to
-    
-    [answer saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            // The object has been saved.
-        } else {
-            // There was a problem, check error.description
-        }
-    }];
-    
-    
-    //------------------------------------------------------------------------------Should I update the local array or refetch then reload the tableView?
-//    if (answer.answerText != nil) {
-//        [self.answers insertObject:answer atIndex:0];
-//        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//    }
+//- (IBAction)createNewAnswer:(UIBarButtonItem *)sender {
+//    
+//    Answer *answer = [Answer objectWithClassName:@"Answer"];
+//    
+//    [self.answersCell setAnswer:answer];
+//    
+//    [answer setObject:[User currentUser] forKey:@"author"];  // Setting the current user as the author of this anwer
+//    
+//    [answer setObject:self.questionsTVC.question forKey:@"question"]; // Setting the question this answer belongs to
+//    
+//    [answer saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        if (succeeded) {
+//            // The object has been saved.
+//        } else {
+//            // There was a problem, check error.description
+//        }
+//    }];
+//    
+//    
+//    //------------------------------------------------------------------------------Should I update the local array or refetch then reload the tableView?
+////    if (answer.answerText != nil) {
+////        [self.answers insertObject:answer atIndex:0];
+////        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+////        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+////    }
+//
+//}
 
-}
-
-// Trying to get the same instance of the Question
-
--(void)setQuestion:(Question *)question {
-    self.question = question;
-}
 
 //------------------------------------------------------------------------------------------------------------------------Need to check if this is right
 
@@ -135,8 +119,6 @@
         identifier = @"QuestionCellAnswersView";
         self.questionCellAnswersView = [tableView dequeueReusableCellWithIdentifier:identifier];
         
-        [self.questionCellAnswersView setQuestion:self.questionsTVC.question];
-
         if (self.questionCellAnswersView == nil) {
             self.questionCellAnswersView = [[QuestionCellAnswerView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }

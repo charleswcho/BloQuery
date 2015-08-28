@@ -14,6 +14,8 @@
 @interface DataSource ()
 
 @property (nonatomic, strong) NSArray *questionItems;
+@property (nonatomic, strong) Question *question;
+@property (nonatomic, strong) Answer *answer;
 
 @end
 
@@ -28,60 +30,82 @@
     return sharedInstance;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self addQuestionData];
+    }
+    return self;
+}
+
 - (void) addQuestionData {
+    
     NSMutableArray *questionItems = [NSMutableArray array];
     
-    Question *question1 = [[Question alloc] init];
+    PFQuery *query = [PFQuery queryWithClassName:@"Question"];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Questions"];
+    [query orderByDescending:@"createdAt"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *parseQuestions, NSError *error) {
-        if (parseQuestions != nil) {
-            for (Question *question in parseQuestions) {
-                question1.objectId = question.objectId;
-                question1.user = [self loadUser];
-                question1.answers = [self loadAnswers];
-                question1.questionText = question.questionText;
+        if (!error) {
+            for (Question *q in parseQuestions) {  // Set local question's values from fetched data
+                self.question.objectId = q.objectId;
+                self.question.user = [self loadQuestionUser];  // Set local question's user to the user it belongs to
+                self.question.answers = [self loadAnswers];  // Set the local questions's answers array to the answers that belong to it
+                self.question.questionText = q.questionText;
                 
-                [questionItems addObject:question1];
+                [questionItems addObject:self.question];  // Adding local question to DataSource readonly property after setting it's values
             }
         }
     }];
 }
 
 
-- (User *) loadUser {
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+- (User *) loadQuestionUser {
     
-    User *user1 = [[User alloc] init];
+    User *user = [self.question objectForKey:@"User"];  // Getting the User this question belongs to
 
-    [query findObjectsInBackgroundWithBlock:^(NSArray *parseUsers, NSError *error) {
-        if (parseUsers != nil) {
-            for (User *user in parseUsers) {
-                user1.objectId = user.objectId;
-                user1.profilePic = user.profilePic;
-                user1.description = user.description;
-            }
+    [user fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (object != nil) {
+                user.objectId = object.objectId;
+                user.profilePic = [object objectForKey:@"profilePic"];
+                user.description = [object objectForKey:@"description"];
         }
     }];
     
-    return user1;
+    return user;
+}
+
+- (User *) loadAnswerUser {
+    
+    User *user = [self.answer objectForKey:@"from"];  // Getting the User this answer belongs to
+    
+    [user fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (object != nil) {
+            user.objectId = object.objectId;
+            user.profilePic = [object objectForKey:@"profilePic"];
+            user.description = [object objectForKey:@"description"];
+        }
+    }];
+    
+    return user;
 }
 
 - (NSMutableArray *) loadAnswers {
     PFQuery *query = [PFQuery queryWithClassName:@"Answer"];
+    [query whereKey:@"from" equalTo:self.question];  // Getting the Answers that belong to this question that's in a loop
     
-    Answer *answer1 = [[Answer alloc] init];
     NSMutableArray *answers = [[NSMutableArray alloc] init];
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *parseAnswers, NSError *error) {
         if (parseAnswers != nil) {
-            for (Answer *answer in parseAnswers) {
-                answer1.from = answer.from;
-                answer1.answerText = answer.answerText;
-                answer1.numberOfVotes = answer.numberOfVotes;
+            for (Answer *a in parseAnswers) {
+                self.answer.from = [self loadAnswerUser];
+                self.answer.answerText = a.answerText;
+                self.answer.numberOfVotes = a.numberOfVotes;
                 
-                [answers addObject:answer];
+                [answers addObject:self.answer];
             }
             
         }

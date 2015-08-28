@@ -11,7 +11,7 @@
 
 @dynamic objectId;
 @dynamic user;
-@dynamic answer;
+@dynamic answers;
 @dynamic questionText;
 //@dynamic answersToQuestion;  // In progress
 
